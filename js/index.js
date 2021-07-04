@@ -23,7 +23,7 @@ const init = () => {
         // ------------------------------------------------
         
         // フレーム数を表示する
-        document.getElementById("webGL-output").appendChild(stats.domElement);
+        document.getElementById("Stats-output").appendChild(stats.domElement);
     
         return stats;
     
@@ -33,14 +33,17 @@ const init = () => {
      * アニメーション生成処理
      */
     const renderScene = () => {
-    
+        
+        //statsエリアを更新する
         stats.update();
-    
-        cube.rotation.x += 0.02;
-        cube.rotation.y += 0.02;
-        cube.rotation.z += 0.02;
-    
-        step += 0.04;
+        
+        // 立方体を回転させる
+        cube.rotation.x += controls.rotationSpeed;
+        cube.rotation.y += controls.rotationSpeed;
+        cube.rotation.z += controls.rotationSpeed;
+        
+        // 弾む速さを設定する
+        step += controls.bouncingSpeed;
         sphere.position.x = 20 + (10* (Math.cos(step)));
         sphere.position.y = 2  + (10*  Math.abs(Math.sin(step)));
         
@@ -235,6 +238,23 @@ const init = () => {
     // renderer.render(scene, camera);
 
     let step = 0;
+
+    // ------------------------------------------------
+    // GUI制御設定処理
+    // ------------------------------------------------
+
+    // GUI用コントローラを定義する
+    // GUIで制御するパラメータを指定する
+    let controls = new function () {
+        this.rotationSpeed = 0.02;
+        this.bouncingSpeed = 0.03;
+    };
+
+    // GUIにコントローラを追加する
+    const gui = new dat.GUI();
+    gui.add(controls, 'rotationSpeed', 0, 0.5);
+    gui.add(controls, 'bouncingSpeed', 0, 0.5);
+
     renderScene();
 
 };
