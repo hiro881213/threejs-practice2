@@ -1,5 +1,61 @@
 const init = () => {
 
+    /**
+     * 初期状態定義メソッド
+     */
+
+    const initStats = () => {
+
+        // stats
+        //   １秒毎のフレーム数を示してくれる
+        let stats = new Stats();
+
+        // 0: フレーム数を表示する
+        // 1: 描画時間を表示する
+        stats.setMode(0);
+    
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+    
+        // ------------------------------------------------
+        // 画面描画処理
+        // ------------------------------------------------
+        
+        // フレーム数を表示する
+        document.getElementById("webGL-output").appendChild(stats.domElement);
+    
+        return stats;
+    
+    };
+    
+    /**
+     * アニメーション生成処理
+     */
+    const renderScene = () => {
+    
+        stats.update();
+    
+        cube.rotation.x += 0.02;
+        cube.rotation.y += 0.02;
+        cube.rotation.z += 0.02;
+    
+        step += 0.04;
+        sphere.position.x = 20 + (10* (Math.cos(step)));
+        sphere.position.y = 2  + (10*  Math.abs(Math.sin(step)));
+        
+
+        // requestAnimationFrame
+        //   ブラウザに定義された間隔で呼び出される関数が設定でき、必要な物を
+        //   その関数内で自由に描画できる
+        requestAnimationFrame(renderScene);
+        renderer.render(scene, camera);
+    
+    };
+
+    // 初期状態を定義する
+    let stats = initStats();
+
     // シーンを作成する
     // シーン
     //  表示したい全ての物体と利用したい全ての光源を保持して変更を監視する
@@ -27,7 +83,7 @@ const init = () => {
     // レンダラオブジェクト
     //   cameraオブジェクトの角度に基づいて、ブラウザ内でsceneオブジェクトが
     //   どのように見えるか計算する
-    const renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer();
 
     // 背景色を設定する
     renderer.setClearColor(new THREE.Color(0xEEEEEE));
@@ -175,8 +231,11 @@ const init = () => {
 
     document.getElementById("webGL-output").appendChild(renderer.domElement);
 
-    // シーンをレンダラに追加する
-    renderer.render(scene, camera);
+    // // シーンをレンダラに追加する
+    // renderer.render(scene, camera);
+
+    let step = 0;
+    renderScene();
 
 };
 
