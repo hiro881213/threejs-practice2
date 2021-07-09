@@ -11,6 +11,18 @@ let scene;
 // レンダラ
 let renderer;
 
+let width = 700;
+
+let height = 500;
+/**
+ * オンロード関数
+ */
+window.onload = function() {
+
+    // 3D画像を生成する
+    init();
+}
+
 /**
  * WebGL描画処理
  */
@@ -92,7 +104,7 @@ const init = () => {
     //  　ウィンドウのwidthを取得する
     // ・window.innerHeight
     //    ウィンドウのheightを取得する
-    camera = new THREE.PerspectiveCamera(45, window.innerWidth*0.8 / window.innerHeight*0.8, 0.1,1000);
+    camera = new THREE.PerspectiveCamera(45, width / height, 0.1,1000);
 
     // ------------------------------------------------
     // レンダラ生成処理
@@ -108,7 +120,7 @@ const init = () => {
     renderer.setClearColor(new THREE.Color(0xEEEEEE));
 
     // レンダラのサイズを指定する
-    renderer.setSize(window.innerWidth*0.8, window.innerHeight*0.8);
+    renderer.setSize(width, height);
 
     // デバイスの解像度をセットする
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -282,17 +294,14 @@ const init = () => {
 const onResize = () => {
 
     // アスペクト比を更新する
-    camera.aspect = window.innerWidth*0.8/window.innerHeight*0.8;
+    camera.aspect = window.innerWidth/window.innerHeight;
 
     // カメラを更新する
     camera.updateProjectionMatrix();
 
     // レンダラのサイズを更新する
-    renderer.setSize(window.innerWidth*0.8, window.innerHeight*0.8);
+    renderer.setSize(width, height);
 }
-
-// オンロード関数
-window.onload = init;
 
 // リサイズイベントを付与する
 window.addEventListener('resize', onResize, false);
