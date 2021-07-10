@@ -5,17 +5,19 @@
         <title>Three.js Practice</title>
         
         <!-- カルーセル用ライブラリ -->
-        <script src="https://unpkg.com/tiny-swiper@latest/lib/index.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/tiny-swiper@latest/lib/index.min.js"></script>
 
         <!-- Three.js用ライブラリ -->
-        <script src = "./lib/three.js"></script>
+        <script type = "text/javascript" src = "./lib/three.js"></script>
+        <script type = "text/javascript" src = "./lib/ParametricGeometries.js"></script>
+        <script type = "text/javascript" src = "./lib/geometries/ConvexGeometry.js"></script>
 
         <!-- stat用ライブラリ -->
-        <script src = "./lib/stats.js"></script>
+        <script type="text/javascript" src = "./lib/stats.js"></script>
 
         <!-- three.js設定用GUIライブラリ -->
-        <script src = "./lib/dat.gui.js"></script>
-        <link rel = 'stylesheet' href = './css/index.css'>
+        <script type="text/javascript"src = "./lib/dat.gui.js"></script>
+        <link   rel = 'stylesheet' href = './css/index.css'>
         <script type = 'module' src = "./js/index.js"></script>
     </head>
     <body>
@@ -31,7 +33,10 @@
                         <div id = 'Scene-stats'></div>
                         <div id = 'Scene-output'></div>
                     </div>
-                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">
+                        <div id = 'Geometry-stats'></div>
+                        <div id = 'Geometry-output'></div>
+                    </div>
                     <div class="swiper-slide">Slide 4</div>
                     <div class="swiper-slide">Slide 5</div>
                 </div>

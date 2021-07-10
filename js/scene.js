@@ -52,6 +52,11 @@ export const makeScene = () => {
     // フォグを利用する
     scene.fog = new THREE.Fog(0xffffff, 0.015,100);
 
+    // OverrideMaterialを有効にする
+    // OverrideMaterial
+    //   シーンない全てのオブジェクトに対して、同じマテリアルの使用を強制できる
+    scene.overrideMaterial = new THREE.MeshLambertMaterial({color: 0xffffff});
+
     // カメラを生成する
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     scene.add(camera)
@@ -167,12 +172,24 @@ export const makeScene = () => {
 
     };
 
-    const gui = new dat.GUI();
-    gui.add(controls, 'rotationSpeed', 0,0.5);
-    gui.add(controls, 'addCube');
-    gui.add(controls, 'removeCube');
-    gui.add(controls, 'outputObjects');
-    gui.add(controls, 'numberOfObjects').listen();
+    // const gui = new dat.GUI();
+    // gui.add(controls, 'rotationSpeed', 0,0.5);
+    // gui.add(controls, 'addCube');
+    // gui.add(controls, 'removeCube');
+    // gui.add(controls, 'outputObjects');
+    // gui.add(controls, 'numberOfObjects').listen();
+
+    controls.addCube();
+    controls.addCube();
+    controls.addCube();
+    controls.addCube();
+    controls.addCube();
+    controls.addCube();
+    controls.addCube();
+    controls.addCube();
+    controls.addCube();
+    controls.addCube();
+    controls.addCube();
 
     render();
 
