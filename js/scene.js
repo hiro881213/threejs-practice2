@@ -49,6 +49,9 @@ export const makeScene = () => {
     // シーンを初期化する
     scene = new THREE.Scene();
 
+    // フォグを利用する
+    scene.fog = new THREE.Fog(0xffffff, 0.015,100);
+
     // カメラを生成する
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     scene.add(camera)
@@ -98,38 +101,65 @@ export const makeScene = () => {
         this.rotationSpeed = 0.02;
         this.numberOfObjects = scene.children.length;
 
+        // ----------------------------------------------------
         // cube削除処理
+        // ----------------------------------------------------
+
         this.removeCube = function() {
+            
+            // シーン内の全てのオブジェクトを取得する
             const allChildren = scene.children;
+
+            // 最後のオブジェクトを取得する
             const lastObject = allChildren[allChildren.length - 1];
 
+            // オブジェクトがメッシュの場合
             if (lastObject instanceof THREE.Mesh) {
+                
+                // シーンからメッシュを削除する
                 scene.remove(lastObject);
+
+                // オブジェクト数を更新する
                 this.numberOfObjects = scene.children.length;
             }
 
         };
 
+        // ----------------------------------------------------
         // Cube追加処理
+        // ----------------------------------------------------
+
         this.addCube = function () {
 
+            // Cubeのサイズを設定する
             var cubeSize = Math.ceil((Math.random() * 3));
+            
+            // ジオメトリを生成する
             var cubeGeometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+            
+            // マテリアルを設定する(ランダムな色設定)
             var cubeMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xffffff});
+            
+            // メッシュを生成する
             var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
             cube.castShadow = true;
             cube.name = "cube-" + scene.children.length;
 
-            // position the cube randomly in the scene
+            // 立方体の位置を設定する(ランダムな位置設定)
             cube.position.x = -30 + Math.round((Math.random() * planeGeometry.parameters.width));
             cube.position.y = Math.round((Math.random() * 5));
             cube.position.z = -20 + Math.round((Math.random() * planeGeometry.parameters.height));
 
-            // add the cube to the scene
+            // 立方体をシーンに追加する
             scene.add(cube);
+
+            // オブジェクト数を設定する
             this.numberOfObjects = scene.children.length;
         };
 
+        // ----------------------------------------------------
+        // シーン情報出力処理
+        // ----------------------------------------------------
 
         this.outputObjects = function() {
             console.log(scene.children);
@@ -145,5 +175,35 @@ export const makeScene = () => {
     gui.add(controls, 'numberOfObjects').listen();
 
     render();
+
+};
+
+
+export const addCube = () => {
+
+    // Cubeのサイズを設定する
+    var cubeSize = Math.ceil((Math.random() * 3));
+    
+    // ジオメトリを生成する
+    var cubeGeometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+    
+    // マテリアルを設定する(ランダムな色設定)
+    var cubeMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xffffff});
+    
+    // メッシュを生成する
+    var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+    cube.castShadow = true;
+    cube.name = "cube-" + scene.children.length;
+
+    // 立方体の位置を設定する(ランダムな位置設定)
+    cube.position.x = -30 + Math.round((Math.random() * planeGeometry.parameters.width));
+    cube.position.y = Math.round((Math.random() * 5));
+    cube.position.z = -20 + Math.round((Math.random() * planeGeometry.parameters.height));
+
+    // 立方体をシーンに追加する
+    scene.add(cube);
+
+    // オブジェクト数を設定する
+    this.numberOfObjects = scene.children.length;
 
 };

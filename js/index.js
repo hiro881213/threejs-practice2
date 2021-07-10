@@ -1,6 +1,6 @@
 // 球体アニメーションJS
 import { makeSquare } from './square.js'
-import { makeScene  } from './scene.js'
+import { makeScene,addCube  } from './scene.js'
 // ------------------------------------------------
 // グローバル変数
 // ------------------------------------------------
@@ -17,3 +17,7 @@ window.onload = function() {
     makeScene();
 
 }
+
+const add = () => {
+    addCube();
+};
