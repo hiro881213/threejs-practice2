@@ -2,6 +2,8 @@
 // グローバル変数
 // ------------------------------------------------
 
+const swiper = new Swiper(".swiper-container");
+
 // カメラオブジェクト
 let camera;
 
@@ -11,7 +13,7 @@ let scene;
 // レンダラ
 let renderer;
 
-let width = 700;
+let width = window.innerWidth;
 
 let height = 500;
 /**
@@ -42,9 +44,9 @@ const init = () => {
         // 1: 描画時間を表示する
         stats.setMode(0);
     
-        stats.domElement.style.position = 'absolute';
-        stats.domElement.style.left = '0px';
-        stats.domElement.style.top = '0px';
+        // stats.domElement.style.position = 'absolute';
+        // stats.domElement.style.left = '0px';
+        // stats.domElement.style.top = '0px';
     
         // ------------------------------------------------
         // 画面描画処理

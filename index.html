@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Three.js Practice</title>
-
-        <!-- カルーセル用のファイルを読み込む -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css" rel="stylesheet">
+        
+        <!-- カルーセル用ライブラリ -->
+        <script src="https://unpkg.com/tiny-swiper@latest/lib/index.min.js"></script>
 
         <!-- Three.js用ライブラリ -->
         <script src = "./lib/three.js"></script>
@@ -19,11 +19,18 @@
     </head>
     <body>
         <header></header>
-        
         <main>
-            <div style = 'text-align:center;'>
-                <div id = 'Stats-output'></div>
-                <div id = 'webGL-output'></div>
+            <div class="swiper-container" style = 'text-align:center;'>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div id = 'Stats-output'></div>
+                        <div id = 'webGL-output'></div>
+                    </div>
+                    <div class="swiper-slide">Slide2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                </div>
             </div>
         </main>
 
