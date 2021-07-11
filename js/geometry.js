@@ -55,7 +55,7 @@ export const makeGeometry = () => {
         geoms.push(new THREE.ConvexGeometry(points));
 
         let pts = [];
-        const detail = .1;
+        const detail = 0.1;
         const radius = 3;
 
         for (var angle = 0.0; angle < Math.PI; angle += detail)
@@ -89,15 +89,15 @@ export const makeGeometry = () => {
 
             let mesh = THREE.SceneUtils.createMultiMaterialObject(geoms[i],materials);
             
-            mesh.traverse((e) => {
-                e.castShadow = true;
+            mesh.traverse(function (e) {
+                e.castShadow = true
             });
 
-            mesh.position.x = -24*((i%4)* 12);
+            mesh.position.x = -24 + ((i%4)* 12);
             mesh.position.y = 4;
             mesh.position.z = -8 + ( j * 12);
 
-            if ((i + 1) % 4 === 0) j++;
+            if ((i + 1) % 4 == 0) j++;
             scene.add(mesh);
         }
 
@@ -111,7 +111,6 @@ export const makeGeometry = () => {
         requestAnimationFrame(render);
         renderer.render(scene, camera);
     };
-
 
     let stats = initStats();
 
@@ -133,6 +132,8 @@ export const makeGeometry = () => {
     const planeGeometry = new THREE.PlaneGeometry(60,40,1,1);
     const planeMaterial = new THREE.MeshLambertMaterial({color: 0xffffff});
     const plane = new THREE.Mesh(planeGeometry,planeMaterial);
+    plane.receiveShadow = true;
+
 
     // 平面の位置設定
     plane.rotation.x = -0.5 * Math.PI;
