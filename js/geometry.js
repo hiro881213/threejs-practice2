@@ -89,6 +89,8 @@ export const makeGeometry = () => {
 
             let mesh = THREE.SceneUtils.createMultiMaterialObject(geoms[i],materials);
             
+            // traverse
+            // メッシュの内部一つ一つに関数を設定できる
             mesh.traverse(function (e) {
                 e.castShadow = true
             });

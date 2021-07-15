@@ -2,6 +2,7 @@
 import { makeSquare } from './square.js'
 import { makeScene,addCube  } from './scene.js'
 import { makeGeometry } from './geometry.js';
+import { makeCustomGeometry } from './custom.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -22,6 +23,10 @@ window.onload = function() {
 
     // ジオメトリアニメーション生成
     makeGeometry();
+
+    // カスタムジオメトリアニメーション生成
+    makeCustomGeometry();
+
 }
 
 const add = () => {
