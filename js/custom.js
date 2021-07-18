@@ -18,8 +18,15 @@ export const makeCustomGeometry = () => {
         mesh.children.forEach(function(e) {
             for (let i = 0; i < 8; i++) {
                 e.geometry.vertices[i].set(controlPoints[i].x, controlPoints[i].y, controlPoints[i].z);
+                // e.geometry.vertices[i].set(controlPoints[i].x, controlPoints[i].y, controlPoints[i].z);
             }
+
+
+            // ジオメトリの更新するよう指定する
             e.geometry.verticesNeedUpdate = true;
+
+            // ジオメトリの法線ベクトルを算出する
+            // →ライティングに利用される
             e.geometry.computeFaceNormals();
 
         });
@@ -106,17 +113,24 @@ export const makeCustomGeometry = () => {
     let geom = new THREE.Geometry();
     geom.vertices = vertices;
     geom.faces = faces;
+
+    // 法線ベクトルを算出する
     geom.computeFaceNormals();
 
     // マテリアルを定義する
     const materials =[
         new THREE.MeshLambertMaterial({opacity:0.6, color: 0x44f44, transparent: true}),
+        // ワイヤフレーム用のマテリアル
         new THREE.MeshBasicMaterial({color: 0x000000, wireframe:true})
     ];
 
     // メッシュ生成処理
+    // createMultiMaterialObject
+    //   複数のマテリアルをメッシュに適用できるようにする
+    // マテリアルそれぞれを適用したメッシュを格納した変数を定義している
     let mesh = THREE.SceneUtils.createMultiMaterialObject(geom, materials);
     
+    // メッシュグループ内全てのメッシュに対して影を設定する
     mesh.children.forEach(function(e) {
         e.castShadow = true;
     });
@@ -143,49 +157,55 @@ export const makeCustomGeometry = () => {
     controlPoints.push(addControl(0,0,0));
     controlPoints.push(addControl(0,0,3));
 
-    // GUI生成処理
-    let gui = new dat.GUI();
+    // // GUI生成処理
+    // let gui = new dat.GUI();
 
-    gui.add(new function() {
-        this.clone = function(){
+    // gui.add(new function() {
 
-            // ジオメトリを複製する
-            let clonedGeometry = mesh.children[0].geometry.clone();
+    //     // クローンボタン押下処理
+    //     this.clone = function(){
+
+    //         // ジオメトリを複製する
+    //         let clonedGeometry = mesh.children[0].geometry.clone();
             
-            // マテリアルを生成する
-            let materials = [
-                new THREE.MeshLambertMaterial({opacity:0.6, color: 0xff44ff,transparent:true}),
-                new THREE.MeshBasicMaterial({color: 0x000000,wireframe: true})
-            ];
+    //         // マテリアルを生成する
+    //         let materials = [
+    //             new THREE.MeshLambertMaterial({opacity:0.6, color: 0xff44ff,transparent:true}),
+    //             new THREE.MeshBasicMaterial({color: 0x000000,wireframe: true})
+    //         ];
 
-            let mesh2 = THREE.SceneUtils.createMultiMaterialObject(clonedGeometry,materials);
+    //         let mesh2 = THREE.SceneUtils.createMultiMaterialObject(clonedGeometry,materials);
 
-            mesh2.children.forEach(function(e) {
-                e.castShadow = true;
-            });
+    //         mesh2.children.forEach(function(e) {
+    //             e.castShadow = true;
+    //         });
 
-            mesh2.translateX(5);
-            mesh2.translateZ(5);
-            mesh2.name = "clone";
+    //         // コピーしたメッシュを移動させる
+    //         mesh2.translateX(5);
+    //         mesh2.translateZ(5);
 
-            // 既存のメッシュをシーンから削除する
-            scene.remove(scene.getObjectByName("clone"));
+    //         // コピーしたメッシュに名前をつける
+    //         mesh2.name = "clone";
 
-            scene.add(mesh2);
+    //         // 既存のコピーメッシュをシーンから削除する
+    //         scene.remove(scene.getObjectByName("clone"));
 
-        }
+    //         scene.add(mesh2);
 
-    },'clone');
+    //     }
 
-    for (var i = 0; i < 8; i++) {
+    // },'clone');
 
-        let f1 = gui.addFolder('Vertices ' + (i + 1));
-        f1.add(controlPoints[i], 'x', -10, 10);
-        f1.add(controlPoints[i], 'y', -10, 10);
-        f1.add(controlPoints[i], 'z', -10, 10);
+    // for (var i = 0; i < 8; i++) {
 
-    }
+    //     let f1 = gui.addFolder('Vertices ' + (i + 1));
+    //     f1.add(controlPoints[i], 'x', -10, 10);
+    //     f1.add(controlPoints[i], 'y', -10, 10);
+    //     f1.add(controlPoints[i], 'z', -10, 10);
 
+    // }
+
+    // レンダラ処理を実行する
     render();
 
 };  
