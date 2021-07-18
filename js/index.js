@@ -1,8 +1,9 @@
 // 球体アニメーションJS
 import { makeSquare } from './square.js'
 import { makeScene,addCube  } from './scene.js'
-import { makeGeometry } from './geometry.js';
+import { makeGeometry } from './geometry.js'
 import { makeCustomGeometry } from './custom.js'
+import { makePropMesh } from './meshProp.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -26,6 +27,9 @@ window.onload = function() {
 
     // カスタムジオメトリアニメーション生成
     makeCustomGeometry();
+
+    // メッシュプロパティアニメーション生成
+    makePropMesh();
 
 }
 
