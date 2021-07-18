@@ -160,7 +160,7 @@ export const makeCustomGeometry = () => {
 
             let mesh2 = THREE.SceneUtils.createMultiMaterialObject(clonedGeometry,materials);
 
-            mesh2 = children.forEach(function(e) {
+            mesh2.children.forEach(function(e) {
                 e.castShadow = true;
             });
 
