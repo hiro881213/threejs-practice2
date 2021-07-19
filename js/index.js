@@ -4,6 +4,7 @@ import { makeScene,addCube  } from './scene.js'
 import { makeGeometry } from './geometry.js'
 import { makeCustomGeometry } from './custom.js'
 import { makePropMesh } from './meshProp.js'
+import { makeMultiCamera } from './multiCamera.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -31,8 +32,7 @@ window.onload = function() {
     // メッシュプロパティアニメーション生成
     makePropMesh();
 
-}
+    // マルチカメラアニメーション生成
+    makeMultiCamera();
 
-const add = () => {
-    addCube();
-};
+}

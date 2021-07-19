@@ -178,54 +178,54 @@ export const makePropMesh = () => {
     // GUI設定処理
     // ----------------------------------------------
 
-    let gui = new dat.GUI();
+    // let gui = new dat.GUI();
 
-    // GUIにscaleを追加する
-    let guiScale = gui.addFolder('scale');
-    guiScale.add(controls, 'scaleX', 0, 5);
-    guiScale.add(controls, 'scaleY', 0, 5);
-    guiScale.add(controls, 'scaleZ', 0, 5);
+    // // GUIにscaleを追加する
+    // let guiScale = gui.addFolder('scale');
+    // guiScale.add(controls, 'scaleX', 0, 5);
+    // guiScale.add(controls, 'scaleY', 0, 5);
+    // guiScale.add(controls, 'scaleZ', 0, 5);
 
-    // GUIにpositionを追加する
-    let guiPosition = gui.addFolder('position');
-    let contX = guiPosition.add(controls, 'positionX', -10, 10);
-    let contY = guiPosition.add(controls, 'positionY', -4,  20);
-    let contZ = guiPosition.add(controls, 'positionZ', -10, 10);
+    // // GUIにpositionを追加する
+    // let guiPosition = gui.addFolder('position');
+    // let contX = guiPosition.add(controls, 'positionX', -10, 10);
+    // let contY = guiPosition.add(controls, 'positionY', -4,  20);
+    // let contZ = guiPosition.add(controls, 'positionZ', -10, 10);
 
-    // contXを変更時の処理を定義する
-    contX.listen();
-    contX.onChange(function(value){
-        cube.position.x = controls.positionX;
-    });
+    // // contXを変更時の処理を定義する
+    // contX.listen();
+    // contX.onChange(function(value){
+    //     cube.position.x = controls.positionX;
+    // });
 
-    // contYを変更時の処理を定義する
-    contY.listen();
-    contY.onChange(function(value) {
-        cube.position.y = controls.positionY;
-    });
+    // // contYを変更時の処理を定義する
+    // contY.listen();
+    // contY.onChange(function(value) {
+    //     cube.position.y = controls.positionY;
+    // });
 
-    // contZを変更時の処理を定義する
-    contZ.listen();
-    contZ.onChange(function() {
-        cube.position.z = controls.positionZ;
-    });
+    // // contZを変更時の処理を定義する
+    // contZ.listen();
+    // contZ.onChange(function() {
+    //     cube.position.z = controls.positionZ;
+    // });
 
-    // GUIにrotationを追加する
-    let guiRotation = gui.addFolder('rotation');
+    // // GUIにrotationを追加する
+    // let guiRotation = gui.addFolder('rotation');
 
-    guiRotation.add(controls, 'rotationX', -4, 4);
-    guiRotation.add(controls, 'rotationY', -4, 4);
-    guiRotation.add(controls, 'rotationZ', -4, 4);
+    // guiRotation.add(controls, 'rotationX', -4, 4);
+    // guiRotation.add(controls, 'rotationY', -4, 4);
+    // guiRotation.add(controls, 'rotationZ', -4, 4);
 
-    // GUIにtranslateを追加する
-    let guiTranslate = gui.addFolder('translate')
+    // // GUIにtranslateを追加する
+    // let guiTranslate = gui.addFolder('translate')
 
-    guiTranslate.add(controls, 'translateX', -10, 10);
-    guiTranslate.add(controls, 'translateY', -10, 10);
-    guiTranslate.add(controls, 'translateZ', -10, 10);
-    guiTranslate.add(controls, 'translate');
+    // guiTranslate.add(controls, 'translateX', -10, 10);
+    // guiTranslate.add(controls, 'translateY', -10, 10);
+    // guiTranslate.add(controls, 'translateZ', -10, 10);
+    // guiTranslate.add(controls, 'translate');
 
-    gui.add(controls,'visible');
+    // gui.add(controls,'visible');
 
     render();
 
