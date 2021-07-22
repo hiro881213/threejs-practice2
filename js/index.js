@@ -5,6 +5,7 @@ import { makeGeometry } from './geometry.js'
 import { makeCustomGeometry } from './custom.js'
 import { makePropMesh } from './meshProp.js'
 import { makeMultiCamera } from './multiCamera.js'
+import { makeCameraLookAt } from './cameraLookAt.js';
 
 // ------------------------------------------------
 // グローバル変数
@@ -35,4 +36,7 @@ window.onload = function() {
     // マルチカメラアニメーション生成
     makeMultiCamera();
 
+    // カメラアニメーション生成
+    makeCameraLookAt();
+    
 }

@@ -163,10 +163,10 @@ export const makeMultiCamera = () => {
     // GUI生成処理
     // ---------------------------------------
 
-    let gui = new dat.GUI();
+    // let gui = new dat.GUI();
 
-    gui.add(controls, 'switchCamera');
-    gui.add(controls, 'perspective');
+    // gui.add(controls, 'switchCamera');
+    // gui.add(controls, 'perspective');
 
     camera.lookAt(scene.position);
     render();
