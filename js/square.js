@@ -285,7 +285,7 @@ export const makeSquare = () => {
  * リサイズイベント
  */
 
- const onResize = () => {
+const onResize = () => {
 
     // アスペクト比を更新する
     camera.aspect = window.innerWidth/window.innerHeight;
