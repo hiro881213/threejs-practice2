@@ -164,18 +164,18 @@ export const makeAmbientAnimation = () => {
     // GUI設定処理
     // ------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // 色設定GUI
-    gui.addColor(controls,'ambientColor').onChange((e) => {
-        ambientLight.color = new THREE.Color(e);
-    });
+    // // 色設定GUI
+    // gui.addColor(controls,'ambientColor').onChange((e) => {
+    //     ambientLight.color = new THREE.Color(e);
+    // });
 
-    // 点光源設定調整GUI
-    gui.add(controls, 'disabedSpotlight').onChange((e) => {
-        spotLight.visible = !e;
-    });
+    // // 点光源設定調整GUI
+    // gui.add(controls, 'disabedSpotlight').onChange((e) => {
+    //     spotLight.visible = !e;
+    // });
 
     const render  = () => {
 
