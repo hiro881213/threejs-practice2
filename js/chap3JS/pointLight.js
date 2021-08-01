@@ -160,7 +160,7 @@ export const makePointLight = () => {
     scene.add(sphereLightMesh);
 
     // DOMに3DCGを反映する
-    document.getElementById('Spot-output').appendChild(renderer.domElement);
+    document.getElementById('Point-output').appendChild(renderer.domElement);
 
     let step = 0;
     let invert = 1;
@@ -180,33 +180,33 @@ export const makePointLight = () => {
     // GUI生成処理
     // ----------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // 環境光設定コントローラ
-    gui.addColor(controls, 'ambientColor').onChange((e) => {
-        ambientLight.color = new THREE.Color(e);
-    });
+    // // 環境光設定コントローラ
+    // gui.addColor(controls, 'ambientColor').onChange((e) => {
+    //     ambientLight.color = new THREE.Color(e);
+    // });
 
-    // 点光源設定コントローラ
-    gui.addColor(controls, 'pointColor').onChange((e) => {
-        pointLight.color = new THREE.Color(e);
-    });
+    // // 点光源設定コントローラ
+    // gui.addColor(controls, 'pointColor').onChange((e) => {
+    //     pointLight.color = new THREE.Color(e);
+    // });
 
-    // intensity設定コントローラ
-    gui.add(controls, 'intensity', 0, 3).onChange((e) => {
-        pointLight.intensity = e;
-    });
+    // // intensity設定コントローラ
+    // gui.add(controls, 'intensity', 0, 3).onChange((e) => {
+    //     pointLight.intensity = e;
+    // });
 
-    // distance設定コントローラ
-    gui.add(controls, 'distance', 0,100).onChange((e) => {
-        pointLight.distance = e;
-    });
+    // // distance設定コントローラ
+    // gui.add(controls, 'distance', 0,100).onChange((e) => {
+    //     pointLight.distance = e;
+    // });
 
-    // decay設定コントローラ
-    gui.add(controls, 'decay', 1, 100).onChange((e) => {
-        pointLight.decay = e;
-    });
+    // // decay設定コントローラ
+    // gui.add(controls, 'decay', 1, 100).onChange((e) => {
+    //     pointLight.decay = e;
+    // });
 
     // ----------------------------
     // レンダリング処理
