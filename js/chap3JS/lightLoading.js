@@ -1,6 +1,7 @@
 import { makeAmbientAnimation } from './ambientLight.js'
 import { makePointLight } from './pointLight.js'
 import { makeSpotLight } from './spotLight.js'
+import { makeDirectionalLight } from './directionalLight.js'
 // ------------------------------------------------
 // グローバル変数
 // ------------------------------------------------
@@ -21,5 +22,8 @@ window.onload = function() {
 
     // スポットライトアニメーションを生成する
     makeSpotLight();
+
+    // 直接光アニメーションを生成する
+    makeDirectionalLight();
 
 };

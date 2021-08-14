@@ -235,78 +235,78 @@ export const makeSpotLight = () => {
         this.stopMovingLight = false;
     }
 
-    // ------------------------------------
-    // GUI設定処理
-    // ------------------------------------
+    // // ------------------------------------
+    // // GUI設定処理
+    // // ------------------------------------
 
-    let gui = new dat.GUI();
+    // let gui = new dat.GUI();
 
-    // 環境光設定GUI
-    gui.addColor(controls, 'ambientColor').onChange(function(e) {
-        ambientLight.color = new THREE.Color(e);
-    });
+    // // 環境光設定GUI
+    // gui.addColor(controls, 'ambientColor').onChange(function(e) {
+    //     ambientLight.color = new THREE.Color(e);
+    // });
 
-    // 点光源設定GUI
-    gui.addColor(controls,'pointColor').onChange(function(e) {
-        spotLight.color = new THREE.Color(e);
-    });
+    // // 点光源設定GUI
+    // gui.addColor(controls,'pointColor').onChange(function(e) {
+    //     spotLight.color = new THREE.Color(e);
+    // });
 
-    // アングル設定GUI
-    gui.add(controls, 'angle',0, Math.PI*2).onChange(function(e) {
-        spotLight.angle = e;
-    });
+    // // アングル設定GUI
+    // gui.add(controls, 'angle',0, Math.PI*2).onChange(function(e) {
+    //     spotLight.angle = e;
+    // });
 
-    // intensity設定GUI
-    gui.add(controls, 'intensity', 0, 5).onChange(function(e) {
-        spotLight.intensity = e;
-    });
+    // // intensity設定GUI
+    // gui.add(controls, 'intensity', 0, 5).onChange(function(e) {
+    //     spotLight.intensity = e;
+    // });
 
-    // decay設定GUI
-    gui.add(controls,'decay', 1, 100).onChange(function(e) {
-        spotLight.decay = e;
-    });
+    // // decay設定GUI
+    // gui.add(controls,'decay', 1, 100).onChange(function(e) {
+    //     spotLight.decay = e;
+    // });
 
-    // distance設定GUI
-    gui.add(controls, 'distance', 0, 200).onChange(function(e) {
-        spotLight.distance = e;
-    });
+    // // distance設定GUI
+    // gui.add(controls, 'distance', 0, 200).onChange(function(e) {
+    //     spotLight.distance = e;
+    // });
 
-    // penumbra設定GUI
-    gui.add(controls, 'penumbra', 0, 100).onChange(function(e) {
-        spotLight.penumbra = e;
-    });
+    // // penumbra設定GUI
+    // gui.add(controls, 'penumbra', 0, 100).onChange(function(e) {
+    //     spotLight.penumbra = e;
+    // });
 
-    // debug設定GUI
-    gui.add(controls, 'debug').onChange(function(e) {
-        cameraHelper.visible = e;
-    });
+    // // debug設定GUI
+    // gui.add(controls, 'debug').onChange(function(e) {
+    //     cameraHelper.visible = e;
+    // });
 
-    // castShadow設定GUI
-    gui.add(controls, 'castShadow').onChange(function(e) {
-        spotLight.castShadow = e;
-    });
+    // // castShadow設定GUI
+    // gui.add(controls, 'castShadow').onChange(function(e) {
+    //     spotLight.castShadow = e;
+    // });
 
-    // 編集対象選択設定GUI
-    gui.add(controls, 'target',['Plane', 'Sphere', 'Cube']).onChange(function(e) {
-        switch(e) {
-            case "Plane": 
-                spotLight.target = plane;
-                break;
+    // // 編集対象選択設定GUI
+    // gui.add(controls, 'target',['Plane', 'Sphere', 'Cube']).onChange(function(e) {
+    //     switch(e) {
+    //         case "Plane": 
+    //             spotLight.target = plane;
+    //             break;
             
-            case "Sphere":
-                spotLight.target = sphere;
-                break;
+    //         case "Sphere":
+    //             spotLight.target = sphere;
+    //             break;
 
-            case "Cube":
-                spotLight.target = cube;
-                break;
-        }
-    });
+    //         case "Cube":
+    //             spotLight.target = cube;
+    //             break;
+    //     }
+    // });
 
-    // stopMovingLight設定GUI
-    gui.add(controls, 'stopMovingLight').onChange(function(e) {
-        stopMovingLight = e;
-    });
+    // // stopMovingLight設定GUI
+    // gui.add(controls, 'stopMovingLight').onChange(function(e) {
+    //     stopMovingLight = e;
+    // });
 
     // レンダリング関数
     const render = () => {
