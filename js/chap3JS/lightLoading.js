@@ -3,6 +3,7 @@ import { makePointLight } from './pointLight.js'
 import { makeSpotLight } from './spotLight.js'
 import { makeDirectionalLight } from './directionalLight.js'
 import { makeHemiSphere } from './hemiSphereLight.js'
+import { makeLensFlares } from './lensflares.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -30,5 +31,8 @@ window.onload = function() {
 
     // hemiSphereライトアニメーションを生成する
     makeHemiSphere();
+
+    // レンズフレアアニメーションを生成する
+    makeLensFlares();
 
 };

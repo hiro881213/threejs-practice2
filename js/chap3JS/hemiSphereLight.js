@@ -160,27 +160,27 @@ export const makeHemiSphere = () => {
 
     };
 
-    let gui = new dat.GUI();
+    // let gui = new dat.GUI();
 
-    gui.add(controls, 'hemisphere').onChange(function(e) {
-        if (!e) {
-            hemiLight.intensity = 0;
-        } else {
-            hemiLight.intensity = controls.intensity;
-        }
-    });
+    // gui.add(controls, 'hemisphere').onChange(function(e) {
+    //     if (!e) {
+    //         hemiLight.intensity = 0;
+    //     } else {
+    //         hemiLight.intensity = controls.intensity;
+    //     }
+    // });
 
-    gui.addColor(controls, 'color').onChange(function(e) {
-        hemiLight.groundColor = new THREE.Color(e);
-    });
+    // gui.addColor(controls, 'color').onChange(function(e) {
+    //     hemiLight.groundColor = new THREE.Color(e);
+    // });
 
-    gui.addColor(controls, 'skyColor').onChange(function(e) {
-        hemiLight.color = new THREE.Color(e);
-    });
+    // gui.addColor(controls, 'skyColor').onChange(function(e) {
+    //     hemiLight.color = new THREE.Color(e);
+    // });
 
-    gui.add(controls,'intensity', 0, 5).onChange(function(e) {
-        hemiLight.intensity = e;
-    });
+    // gui.add(controls,'intensity', 0, 5).onChange(function(e) {
+    //     hemiLight.intensity = e;
+    // });
 
     const render = () => {
 
