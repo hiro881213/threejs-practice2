@@ -2,6 +2,8 @@ import { makeAmbientAnimation } from './ambientLight.js'
 import { makePointLight } from './pointLight.js'
 import { makeSpotLight } from './spotLight.js'
 import { makeDirectionalLight } from './directionalLight.js'
+import { makeHemiSphere } from './hemiSphereLight.js'
+
 // ------------------------------------------------
 // グローバル変数
 // ------------------------------------------------
@@ -25,5 +27,8 @@ window.onload = function() {
 
     // 直接光アニメーションを生成する
     makeDirectionalLight();
+
+    // hemiSphereライトアニメーションを生成する
+    makeHemiSphere();
 
 };

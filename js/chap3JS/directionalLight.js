@@ -171,51 +171,51 @@ export const makeDirectionalLight = () => {
         this.target = "plane";
     }
 
-    // ----------------------------------------------
-    // GUI生成処理
-    // ----------------------------------------------
+    // // ----------------------------------------------
+    // // GUI生成処理
+    // // ----------------------------------------------
 
-    let gui = new dat.GUI();
+    // let gui = new dat.GUI();
 
-    gui.addColor(controls, 'ambientColor').onChange(function(e) {
-        ambientLight.color = new THREE.Color(e);
-    });
+    // gui.addColor(controls, 'ambientColor').onChange(function(e) {
+    //     ambientLight.color = new THREE.Color(e);
+    // });
 
-    gui.addColor(controls, 'pointColor').onChange(function(e) {
-        directionalLight.color = new THREE.Color(e);
-    });
+    // gui.addColor(controls, 'pointColor').onChange(function(e) {
+    //     directionalLight.color = new THREE.Color(e);
+    // });
 
-    gui.add(controls, 'intensity', 0, 5).onChange(function(e) {
-        directionalLight.intensity = e;
-    });
+    // gui.add(controls, 'intensity', 0, 5).onChange(function(e) {
+    //     directionalLight.intensity = e;
+    // });
 
-    gui.add(controls, 'distance', 0, 200).onChange(function(e) {
-        directionalLight.distance = e;
-    });
+    // gui.add(controls, 'distance', 0, 200).onChange(function(e) {
+    //     directionalLight.distance = e;
+    // });
 
-    gui.add(controls, 'debug').onChange(function(e) {
-        cameraHelper.visible = e;
-    });
+    // gui.add(controls, 'debug').onChange(function(e) {
+    //     cameraHelper.visible = e;
+    // });
 
-    gui.add(controls, 'castShadow').onChange(function(e) {
-        directionalLight.castShadow = e;
-    });
+    // gui.add(controls, 'castShadow').onChange(function(e) {
+    //     directionalLight.castShadow = e;
+    // });
 
-    gui.add(controls, 'target', ['plane','Sphere', 'Cube']).onChange(function(e) {
-        switch(e) {
-            case "Plane" :
-                directionalLight.target = plane;
-                break;
+    // gui.add(controls, 'target', ['plane','Sphere', 'Cube']).onChange(function(e) {
+    //     switch(e) {
+    //         case "Plane" :
+    //             directionalLight.target = plane;
+    //             break;
             
-            case "Sphere":
-                directionalLight.target = sphere;
-                break;
+    //         case "Sphere":
+    //             directionalLight.target = sphere;
+    //             break;
             
-            case "Cube":
-                directionalLight.target = cube;
-                break;
-        }
-    });
+    //         case "Cube":
+    //             directionalLight.target = cube;
+    //             break;
+    //     }
+    // });
 
     const render = () => {
         cube.rotation.x += controls.rotationSpeed;
