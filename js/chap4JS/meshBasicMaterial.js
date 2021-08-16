@@ -139,98 +139,98 @@ export const makeBasicMaterial = () => {
 
     };
 
-    let gui = new dat.GUI();
+    // let gui = new dat.GUI();
 
-    let spGui = gui.addFolder("Mesh");
+    // let spGui = gui.addFolder("Mesh");
     
-    spGui.add(controls, 'opacity', 0, 1).onChange(function(e) {
-        meshMaterial.opacity = e;
-    });
+    // spGui.add(controls, 'opacity', 0, 1).onChange(function(e) {
+    //     meshMaterial.opacity = e;
+    // });
 
-    spGui.add(controls, 'transparent').onChange(function(e) {
-        meshMaterial.transparent = e;
-    });
+    // spGui.add(controls, 'transparent').onChange(function(e) {
+    //     meshMaterial.transparent = e;
+    // });
 
-    spGui.add(controls, 'wireframe').onChange(function(e) {
-        meshMaterial.wireframe = e;
-    });
+    // spGui.add(controls, 'wireframe').onChange(function(e) {
+    //     meshMaterial.wireframe = e;
+    // });
 
-    spGui.add(controls, 'wireframeLinewidth', 0, 20).onChange(function (e) {
-        meshMaterial.wireframeLinewidth = e
-    });
+    // spGui.add(controls, 'wireframeLinewidth', 0, 20).onChange(function (e) {
+    //     meshMaterial.wireframeLinewidth = e
+    // });
 
-    spGui.add(controls, 'visible').onChange(function(e) {
-        meshMaterial.visible = e;
-    });
+    // spGui.add(controls, 'visible').onChange(function(e) {
+    //     meshMaterial.visible = e;
+    // });
 
-    spGui.add(controls, 'side', ["front", "back", "double"]).onChange(function(e) {
+    // spGui.add(controls, 'side', ["front", "back", "double"]).onChange(function(e) {
 
-        switch (e) {
-            case "front" :
-                meshMaterial.side = THREE.FrontSide;
-                break;
+    //     switch (e) {
+    //         case "front" :
+    //             meshMaterial.side = THREE.FrontSide;
+    //             break;
             
-            case "back" :
-                meshMaterial.side = THREE.BackSide;
-                break;
+    //         case "back" :
+    //             meshMaterial.side = THREE.BackSide;
+    //             break;
             
-            case "double" : 
-                meshMaterial.side = THREE.DoubleSide;
-                break;
-        }
+    //         case "double" : 
+    //             meshMaterial.side = THREE.DoubleSide;
+    //             break;
+    //     }
 
-        meshMaterial.needsUpdate = true;
+    //     meshMaterial.needsUpdate = true;
 
-    });
+    // });
 
-    spGui.addColor(controls, 'color').onChange(function(e) {
-        meshMaterial.color.setStyle(e)
-    });
+    // spGui.addColor(controls, 'color').onChange(function(e) {
+    //     meshMaterial.color.setStyle(e)
+    // });
 
-    spGui.add(controls, 'clippingEnabled').onChange(function(e) {
-        webGLRenderer.localClippingEnabled = e;
-    });
+    // spGui.add(controls, 'clippingEnabled').onChange(function(e) {
+    //     webGLRenderer.localClippingEnabled = e;
+    // });
 
-    spGui.add(controls, 'clippingPlaneZ', -5.0, 5.0).onChange(function(e) {
-        meshMaterial.clippingPlanes[0].constant = e;
-    });
+    // spGui.add(controls, 'clippingPlaneZ', -5.0, 5.0).onChange(function(e) {
+    //     meshMaterial.clippingPlanes[0].constant = e;
+    // });
 
-    spGui.add(controls, 'selectedMesh', ["cube", "sphere", "plane"]).onChange(function(e) {
+    // spGui.add(controls, 'selectedMesh', ["cube", "sphere", "plane"]).onChange(function(e) {
 
-        scene.remove(plane);
-        scene.remove(cube);
-        scene.remove(sphere);
+    //     scene.remove(plane);
+    //     scene.remove(cube);
+    //     scene.remove(sphere);
 
-        switch (e) {
-            case "cube" :
-                scene.add(cube);
-                break;
+    //     switch (e) {
+    //         case "cube" :
+    //             scene.add(cube);
+    //             break;
             
-            case "sphere" :
-                scene.add(sphere);
-                break;
+    //         case "sphere" :
+    //             scene.add(sphere);
+    //             break;
 
-            case "plane" :
-                scene.add(plane);
-                break;
+    //         case "plane" :
+    //             scene.add(plane);
+    //             break;
 
-        }
+    //     }
 
-        scene.add(e);
+    //     scene.add(e);
 
-    });
+    // });
 
-    gui.add(controls, 'switchRenderer');
+    // gui.add(controls, 'switchRenderer');
     
-    let cvGui = gui.addFolder("Canvas renderer");
+    // let cvGui = gui.addFolder("Canvas renderer");
     
-    cvGui.add(controls, 'overdraw').onChange(function(e) {
-        meshMaterial.overdraw = e;
-    });
+    // cvGui.add(controls, 'overdraw').onChange(function(e) {
+    //     meshMaterial.overdraw = e;
+    // });
 
-    cvGui.add(controls, 'wireFrameLineJoin', ['round', 'bevel', 'miter']).onChange(function(e) {
-        meshMaterial.wireframeLinejoin = e;
-    });
+    // cvGui.add(controls, 'wireFrameLineJoin', ['round', 'bevel', 'miter']).onChange(function(e) {
+    //     meshMaterial.wireframeLinejoin = e;
+    // });
 
     const render = () => {
 
