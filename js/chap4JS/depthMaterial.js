@@ -84,20 +84,20 @@ export const makeDepthMaterial = () => {
 
     };
 
-    let gui = new dat.GUI();
+    // let gui = new dat.GUI();
 
-    gui.add(controls, 'rotationSpeed', 0, 0.5);
-    gui.add(controls, 'addCube');
-    gui.add(controls, 'removeCube');
-    gui.add(controls, 'cameraNear', 0, 50).onChange(function(e) {
-        camera.near = e;
-        camera.updateProjectionMatrix();
-    });
+    // gui.add(controls, 'rotationSpeed', 0, 0.5);
+    // gui.add(controls, 'addCube');
+    // gui.add(controls, 'removeCube');
+    // gui.add(controls, 'cameraNear', 0, 50).onChange(function(e) {
+    //     camera.near = e;
+    //     camera.updateProjectionMatrix();
+    // });
 
-    gui.add(controls, 'cameraFar', 100, 300).onChange(function(e) {
-        camera.far = e;
-        camera.updateProjectionMatrix();
-    });
+    // gui.add(controls, 'cameraFar', 100, 300).onChange(function(e) {
+    //     camera.far = e;
+    //     camera.updateProjectionMatrix();
+    // });
 
     let i = 0;
     

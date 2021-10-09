@@ -1,6 +1,6 @@
 import { makeBasicMaterial } from './meshBasicMaterial.js'
 import { makeDepthMaterial } from './depthMaterial.js'
-
+import { makeCombinedMaterial } from './combinedMaterial.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -19,5 +19,8 @@ window.onload = function() {
 
     // Depthマテリアルアニメーション生成処理
     makeDepthMaterial();
+
+    // Combineマテリアルアニメーション生成処理
+    makeCombinedMaterial();
 
 }
