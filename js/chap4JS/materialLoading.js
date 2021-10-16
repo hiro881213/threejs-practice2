@@ -2,7 +2,7 @@ import { makeBasicMaterial } from './meshBasicMaterial.js'
 import { makeDepthMaterial } from './depthMaterial.js'
 import { makeCombinedMaterial } from './combinedMaterial.js'
 import { makeNormalMaterial } from './meshNormalMaterial.js'
-
+import { makeMultiMaterial } from './meshMultiMaterial.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -28,5 +28,7 @@ window.onload = function() {
     // Normalマテリアルアニメーション生成処理
     makeNormalMaterial();
 
+    // Multiマテリアルアニメーション生成処理
+    makeMultiMaterial();
 
 }

@@ -23,7 +23,6 @@ export const makeNormalMaterial = () => {
     // レンダラ生成処理
     // ------------------------------------------
 
-    let renderer;
     let webGLRenderer = new THREE.WebGLRenderer();
 
     webGLRenderer.setClearColor(new THREE.Color(0xEEEEEE));
@@ -206,147 +205,147 @@ export const makeNormalMaterial = () => {
 
     };
 
-    // ------------------------------------------
-    // GUI設定処理
-    // ------------------------------------------
+//     // ------------------------------------------
+//     // GUI設定処理
+//     // ------------------------------------------
 
-    let gui = new dat.GUI();
+//     let gui = new dat.GUI();
 
-    let spGui = gui.addFolder("Mesh");
+//     let spGui = gui.addFolder("Mesh");
 
-    // 透過性をGUIに追加する
-    spGui.add(controls, 'opacity', 0, 1).onChange((e) => {
-        meshMaterial.opacity = e;
-    });
+//     // 透過性をGUIに追加する
+//     spGui.add(controls, 'opacity', 0, 1).onChange((e) => {
+//         meshMaterial.opacity = e;
+//     });
 
-    spGui.add(controls, 'transparent').onChange((e) => {
-        meshMaterial.transparent = e;
-    });
+//     spGui.add(controls, 'transparent').onChange((e) => {
+//         meshMaterial.transparent = e;
+//     });
 
-    // ワイヤフレームをGUIに追加する
-    spGui.add(controls, 'wireframe').onChange((e) => {
-        meshMaterial.wireframe = e;
-    });
+//     // ワイヤフレームをGUIに追加する
+//     spGui.add(controls, 'wireframe').onChange((e) => {
+//         meshMaterial.wireframe = e;
+//     });
 
-    // ワイヤフレームの幅をGUIに追加する
-    spGui.add(controls, 'wireframeLinewidth', 0, 20).onChange((e) => {
-        meshMaterial.wireframeLinewidth = e;
-    });
+//     // ワイヤフレームの幅をGUIに追加する
+//     spGui.add(controls, 'wireframeLinewidth', 0, 20).onChange((e) => {
+//         meshMaterial.wireframeLinewidth = e;
+//     });
 
-    // 表示設定をGUIに追加する
-    spGui.add(controls, 'visible').onChange((e) => {
-        meshMaterial.visible = e;
-    });
+//     // 表示設定をGUIに追加する
+//     spGui.add(controls, 'visible').onChange((e) => {
+//         meshMaterial.visible = e;
+//     });
 
-    // 撮影位置をGUIに追加する
-    spGui.add(controls, 'side', ["front", "back", "double"]).onChange((e) => {
+//     // 撮影位置をGUIに追加する
+//     spGui.add(controls, 'side', ["front", "back", "double"]).onChange((e) => {
 
-        // 切換設定処理
-        switch(e) {
+//         // 切換設定処理
+//         switch(e) {
 
-            case "front" :
-                meshMaterial.side = THREE.FrontSide;
-                break;
+//             case "front" :
+//                 meshMaterial.side = THREE.FrontSide;
+//                 break;
 
-            case "back" :
-                meshMaterial.side = THREE.BackSide;
-                break;
+//             case "back" :
+//                 meshMaterial.side = THREE.BackSide;
+//                 break;
 
-            case "double" :
-                meshMaterial.side = THREE.DoubleSide;
-                break;
+//             case "double" :
+//                 meshMaterial.side = THREE.DoubleSide;
+//                 break;
 
-        }
+//         }
 
-        meshMaterial.needUpdate = true;
+//         meshMaterial.needUpdate = true;
         
-    });
-/*
-    spGui.add(controls, 'shading', ["flat", "smooth"]).onChange((e) => {
+//     });
+// /*
+//     spGui.add(controls, 'shading', ["flat", "smooth"]).onChange((e) => {
 
-        switch(e) {
+//         switch(e) {
 
-            case "flat" :
-                meshMaterial.shading = THREE.FlatShading;
-                break;
+//             case "flat" :
+//                 meshMaterial.shading = THREE.FlatShading;
+//                 break;
             
-            case "smooth" :
-                meshMaterial.shading = THREE.SmoothShading;
-                break;
-        }
+//             case "smooth" :
+//                 meshMaterial.shading = THREE.SmoothShading;
+//                 break;
+//         }
 
-        let oldPos = sphere.position.clone();
+//         let oldPos = sphere.position.clone();
         
-        // 球体をシーンから削除する
-        scene.remove(sphere);
+//         // 球体をシーンから削除する
+//         scene.remove(sphere);
 
-        // 平面をシーンから削除する
-        scene.remove(plane);
+//         // 平面をシーンから削除する
+//         scene.remove(plane);
 
-        // 立方体をシーンから削除する
-        scene.remove(cube);
+//         // 立方体をシーンから削除する
+//         scene.remove(cube);
 
-        // 球体を再生成する
-        sphere = new THREE.Mesh(sphere.geometry.clone(), meshMaterial);
+//         // 球体を再生成する
+//         sphere = new THREE.Mesh(sphere.geometry.clone(), meshMaterial);
 
-        // 立方体を再生成する
-        cube = new THREE.Mesh(cube.geometry.clone(), meshMaterial);
+//         // 立方体を再生成する
+//         cube = new THREE.Mesh(cube.geometry.clone(), meshMaterial);
 
-        // 平面を再生成する
-        plane = new THREE.Mesh(plane.geometry.clone(), meshMaterial);
+//         // 平面を再生成する
+//         plane = new THREE.Mesh(plane.geometry.clone(), meshMaterial);
 
-        // 球体の位置を設定する
-        sphere.position.set(oldPos);
+//         // 球体の位置を設定する
+//         sphere.position.set(oldPos);
 
-        // 立方体の位置を設定する
-        cube.position.set(oldPos);
+//         // 立方体の位置を設定する
+//         cube.position.set(oldPos);
 
-        // 平面の位置を設定する
-        plane.position.set(oldPos);
+//         // 平面の位置を設定する
+//         plane.position.set(oldPos);
 
-        switch(controls.selectedMesh) {
+//         switch(controls.selectedMesh) {
 
-            case "cube":
-                scene.add(cube);
-                break;
+//             case "cube":
+//                 scene.add(cube);
+//                 break;
 
-            case "sphere":
-                scene.add(sphere);
-                break;
+//             case "sphere":
+//                 scene.add(sphere);
+//                 break;
 
-            case "plane":
-                scene.add(plane);
-                break;
+//             case "plane":
+//                 scene.add(plane);
+//                 break;
 
-        }
+//         }
 
-        meshMaterial.needUpdate = true;
+//         meshMaterial.needUpdate = true;
 
-    });
-*/
-    spGui.add(controls, 'selectedMesh', ['cube', 'sphere', 'plane']).onChange((e) => {
+//     });
+// */
+//     spGui.add(controls, 'selectedMesh', ['cube', 'sphere', 'plane']).onChange((e) => {
 
-        scene.remove(plane);
-        scene.remove(cube);
-        scene.remove(sphere);
+//         scene.remove(plane);
+//         scene.remove(cube);
+//         scene.remove(sphere);
 
-        switch(e) {
+//         switch(e) {
 
-            case "cube":
-                scene.add(cube);
-                break;
+//             case "cube":
+//                 scene.add(cube);
+//                 break;
 
-            case "sphere":
-                scene.add(sphere);
-                break;
+//             case "sphere":
+//                 scene.add(sphere);
+//                 break;
 
-            case "plane":
-                scene.add(plane);
-                break;
+//             case "plane":
+//                 scene.add(plane);
+//                 break;
 
-        }
+//         }
 
-    });
+//     });
 
     const render = () => {
 
