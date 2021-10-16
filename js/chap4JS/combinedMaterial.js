@@ -130,37 +130,37 @@ export const makeCombinedMaterial = () => {
         }
     };        
     
-    // --------------------------------
-    // GUI設定処理
-    // --------------------------------
+    // // --------------------------------
+    // // GUI設定処理
+    // // --------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    gui.addColor(controls, 'color');
+    // gui.addColor(controls, 'color');
     
-    // 立方体回転速度GUI
-    gui.add(controls, 'rotationSpeed', 0, 0.5);
+    // // 立方体回転速度GUI
+    // gui.add(controls, 'rotationSpeed', 0, 0.5);
     
-    // 立方体追加GUI
-    gui.add(controls, 'addCube');
+    // // 立方体追加GUI
+    // gui.add(controls, 'addCube');
     
-    // 立方体削除GUI
-    gui.add(controls, 'removeCube');
+    // // 立方体削除GUI
+    // gui.add(controls, 'removeCube');
     
-    // カメラNear用GUI
-    gui.add(controls, 'cameraNear', 0, 50).onChange(function(e) {
-        camera.near = e;
+    // // カメラNear用GUI
+    // gui.add(controls, 'cameraNear', 0, 50).onChange(function(e) {
+    //     camera.near = e;
 
-        // カメラを更新する
-        camera.updateProjectionMatrix();
-    });
+    //     // カメラを更新する
+    //     camera.updateProjectionMatrix();
+    // });
 
-    // カメラFar用GUI
-    gui.add(controls, 'cameraFar', 100, 300).onChange(function(e) {
-        camera.near = e;
-        camera.updateProjectionMatrix();
-    });
+    // // カメラFar用GUI
+    // gui.add(controls, 'cameraFar', 100, 300).onChange(function(e) {
+    //     camera.near = e;
+    //     camera.updateProjectionMatrix();
+    // });
 
     let i = 0;
 
