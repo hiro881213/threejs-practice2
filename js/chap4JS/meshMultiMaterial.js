@@ -127,8 +127,8 @@ export const makeMultiMaterial = () => {
         this.numberOfObjects = scene.children.length;
     };
 
-    let gui = new dat.GUI();
-    gui.add(controls, 'rotationSpeed', 0, 0.5);
+    // let gui = new dat.GUI();
+    // gui.add(controls, 'rotationSpeed', 0, 0.5);
 
     // -------------------------------------
     // レンダラ関数
