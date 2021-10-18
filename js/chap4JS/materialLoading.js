@@ -4,6 +4,7 @@ import { makeCombinedMaterial } from './combinedMaterial.js'
 import { makeNormalMaterial } from './meshNormalMaterial.js'
 import { makeMultiMaterial } from './meshMultiMaterial.js'
 import { makeLambertMaterial } from './meshLambertMaterial.js'
+
 // ------------------------------------------------
 // グローバル変数
 // ------------------------------------------------
