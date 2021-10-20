@@ -1,5 +1,6 @@
-import { makePhongMaterial } from './meshphongMaterial.js'
+import { makePhongMaterial  } from './meshphongMaterial.js'
 import { makeShaderMaterial } from './meshShaderMaterial.js'
+import { makeLineMaterial   } from './meshLineMaterial.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -18,4 +19,8 @@ window.onload = function() {
 
     // シェーダーマテリアルアニメーション
     makeShaderMaterial();
+
+    // ラインマテリアルアニメーション
+    makeLineMaterial();
+
 }
