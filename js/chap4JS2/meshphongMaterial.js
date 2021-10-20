@@ -183,118 +183,118 @@ export const makePhongMaterial = () => {
 
     };
 
-    // --------------------------------------
-    // GUI設定処理
-    // --------------------------------------
+    // // --------------------------------------
+    // // GUI設定処理
+    // // --------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    let spGui = gui.addFolder("Mesh");
+    // let spGui = gui.addFolder("Mesh");
 
-    // 透過性
-    spGui.add(controls, 'opacity', 0, 1).onChange((e) => {
-        meshMaterial.opacity = e;
-    });
+    // // 透過性
+    // spGui.add(controls, 'opacity', 0, 1).onChange((e) => {
+    //     meshMaterial.opacity = e;
+    // });
 
-    spGui.add(controls, 'transparent').onChange((e) => {
-        meshMaterial.transparent = e;
-    });
+    // spGui.add(controls, 'transparent').onChange((e) => {
+    //     meshMaterial.transparent = e;
+    // });
 
-    // 表示非表示
-    spGui.add(controls, 'visible').onChange((e) => {
-        meshMaterial.visible = e;
-    });
+    // // 表示非表示
+    // spGui.add(controls, 'visible').onChange((e) => {
+    //     meshMaterial.visible = e;
+    // });
 
-    // エミッシブ
-    spGui.addColor(controls, 'emissive').onChange((e) => {
-        meshMaterial.emissive = new THREE.Color(e);
-    });
+    // // エミッシブ
+    // spGui.addColor(controls, 'emissive').onChange((e) => {
+    //     meshMaterial.emissive = new THREE.Color(e);
+    // });
 
-    // スペキュラ
-    spGui.addColor(controls, 'specular').onChange((e) => {
-        meshMaterial.specular = new THREE.Color(e);
-    });
+    // // スペキュラ
+    // spGui.addColor(controls, 'specular').onChange((e) => {
+    //     meshMaterial.specular = new THREE.Color(e);
+    // });
 
-    // 輝度
-    spGui.add(controls, 'shininess', 0, 200).onChange((e) =>{
-        meshMaterial.shininess = e;
-    });
+    // // 輝度
+    // spGui.add(controls, 'shininess', 0, 200).onChange((e) =>{
+    //     meshMaterial.shininess = e;
+    // });
 
-    // 方向
-    spGui.add(controls, 'side', ["front", "back", "double"]).onChange((e) => {
+    // // 方向
+    // spGui.add(controls, 'side', ["front", "back", "double"]).onChange((e) => {
 
-        switch (e) {
+    //     switch (e) {
 
-            case "front":
-                meshMaterial.side = THREE.FrantSide;
-                break;
+    //         case "front":
+    //             meshMaterial.side = THREE.FrantSide;
+    //             break;
             
-            case "back":
-                meshMaterial.side = THREE.BackSide;
-                break;
+    //         case "back":
+    //             meshMaterial.side = THREE.BackSide;
+    //             break;
 
-            case "double":
-                meshMaterial.side = THREE.DoubleSide;
-                break;
+    //         case "double":
+    //             meshMaterial.side = THREE.DoubleSide;
+    //             break;
 
-        }
+    //     }
 
-        meshMaterial.needsUpdate = true;
+    //     meshMaterial.needsUpdate = true;
 
-    });
+    // });
 
-    // シェーディング
-    spGui.add(controls, 'shading', ["flat", "smooth"]).onChange((e) => {
+    // // シェーディング
+    // spGui.add(controls, 'shading', ["flat", "smooth"]).onChange((e) => {
 
-        switch (e) {
-            case "flat":
-                meshMaterial.shading = THREE.FlatShading;
-                break;
+    //     switch (e) {
+    //         case "flat":
+    //             meshMaterial.shading = THREE.FlatShading;
+    //             break;
             
-            case "smooth":
-                meshMaterial.shading = THREE.SmoothShading;
-                break;
-        }
+    //         case "smooth":
+    //             meshMaterial.shading = THREE.SmoothShading;
+    //             break;
+    //     }
 
-        meshMaterial.needsUpdate = true;
+    //     meshMaterial.needsUpdate = true;
 
-    });
+    // });
 
-    // 色
-    spGui.addColor(controls, 'color').onChange((e) => {
-        meshMaterial.color.setStyle(e);
-    });
+    // // 色
+    // spGui.addColor(controls, 'color').onChange((e) => {
+    //     meshMaterial.color.setStyle(e);
+    // });
 
-    // メッシュ選択
-    spGui.add(controls, 'selectedMesh', ["cube", "sphere", "plane"]).onChange((e) => {
+    // // メッシュ選択
+    // spGui.add(controls, 'selectedMesh', ["cube", "sphere", "plane"]).onChange((e) => {
 
-        // シーンから平面を削除する
-        scene.remove(plane);
+    //     // シーンから平面を削除する
+    //     scene.remove(plane);
 
-        // シーンから立方体を削除する
-        scene.remove(cube);
+    //     // シーンから立方体を削除する
+    //     scene.remove(cube);
 
-        // シーンから球体を削除する
-        scene.remove(sphere);
+    //     // シーンから球体を削除する
+    //     scene.remove(sphere);
 
-        switch (e) {
-            case "cube":
+    //     switch (e) {
+    //         case "cube":
 
-                // シーンに立方体を追加する
-                scene.add(cube);
-                break;
+    //             // シーンに立方体を追加する
+    //             scene.add(cube);
+    //             break;
             
-            case "sphere":
-                scene.add(sphere);
-                break;
+    //         case "sphere":
+    //             scene.add(sphere);
+    //             break;
 
-            case "plane":
-                scene.add(plane);
-                break;
-        }
+    //         case "plane":
+    //             scene.add(plane);
+    //             break;
+    //     }
 
-    });
+    // });
 
     // --------------------------------------
     // レンダラ関数
