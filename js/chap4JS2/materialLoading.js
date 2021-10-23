@@ -1,6 +1,8 @@
-import { makePhongMaterial  } from './meshphongMaterial.js'
-import { makeShaderMaterial } from './meshShaderMaterial.js'
-import { makeLineMaterial   } from './meshLineMaterial.js'
+import { makePhongMaterial    } from './meshphongMaterial.js'
+import { makeShaderMaterial   } from './meshShaderMaterial.js'
+import { makeLineMaterial     } from './meshLineMaterial.js'
+import { makeDachLineMaterial } from './meshDashLineMaterial.js'
+
 
 // ------------------------------------------------
 // グローバル変数
@@ -22,5 +24,8 @@ window.onload = function() {
 
     // ラインマテリアルアニメーション
     makeLineMaterial();
+
+    // ダッシュラインマテリアルアニメーション
+    makeDachLineMaterial();
 
 }
