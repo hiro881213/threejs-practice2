@@ -1,12 +1,11 @@
 let scene;
 let camera;
-let renderer;
 
 let width = window.innerWidth;
 let height = 500;
 
 export const make2dPlaneGeometries = () => {
-    
+
     // ---------------------------------------
     // メッシュ生成処理
     // ---------------------------------------
@@ -129,24 +128,24 @@ export const make2dPlaneGeometries = () => {
 
     };
 
-    // ---------------------------------------
-    // GUI生成処理
-    // ---------------------------------------
+    // // ---------------------------------------
+    // // GUI生成処理
+    // // ---------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // 幅
-    gui.add(controls, 'width', 0, 40).onChange(controls.redraw);
+    // // 幅
+    // gui.add(controls, 'width', 0, 40).onChange(controls.redraw);
 
-    // 高さ
-    gui.add(controls, 'height', 0, 40).onChange(controls.redraw);
+    // // 高さ
+    // gui.add(controls, 'height', 0, 40).onChange(controls.redraw);
 
-    // 幅(セグメント)
-    gui.add(controls, 'widthSegments', 0, 10).onChange(controls.redraw);
+    // // 幅(セグメント)
+    // gui.add(controls, 'widthSegments', 0, 10).onChange(controls.redraw);
 
-    // 高さ(セグメント)
-    gui.add(controls, 'heightSegments', 0, 10).onChange(controls.redraw);
+    // // 高さ(セグメント)
+    // gui.add(controls, 'heightSegments', 0, 10).onChange(controls.redraw);
 
     // ---------------------------------------
     // レンダリング処理
