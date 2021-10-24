@@ -1,6 +1,5 @@
 let scene;
 let camera;
-let renderer;
 
 let width = window.innerWidth;
 let height = 500;
