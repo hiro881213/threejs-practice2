@@ -1,6 +1,5 @@
 let scene;
 let camera;
-let renderer;
 
 let width = window.innerWidth;
 let height = 500;
@@ -94,13 +93,13 @@ export const make2dCircleGeometries = () => {
 
     let controls = new function() {
 
-        this.radius = 4;
+        this.radius = 10;
 
         this.thetaStart = 0.3 * Math.PI * 2;
         this.thetaLength = 0.3 * Math.PI * 2;
 
         // セグメント数
-        this.segments = 10;
+        this.segments = 30;
 
         // 再描画処理
         this.redraw = function() {
@@ -127,20 +126,20 @@ export const make2dCircleGeometries = () => {
     // GUI設定処理
     // -------------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // radius
-    gui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
+    // // radius
+    // gui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
 
-    // セグメント
-    gui.add(controls, 'segments', 0, 40).onChange(controls.redraw);
+    // // セグメント
+    // gui.add(controls, 'segments', 0, 40).onChange(controls.redraw);
 
-    // thetaStart
-    gui.add(controls, 'thetaStart', 0, 2*Math.PI).onChange(controls.redraw);
+    // // thetaStart
+    // gui.add(controls, 'thetaStart', 0, 2*Math.PI).onChange(controls.redraw);
 
-    // thetaLegth
-    gui.add(controls, 'thetaLength', 0, 2*Math.PI).onChange(controls.redraw);
+    // // thetaLegth
+    // gui.add(controls, 'thetaLength', 0, 2*Math.PI).onChange(controls.redraw);
 
     // -------------------------------------------
     // レンダラ設定処理
