@@ -105,33 +105,33 @@ export const make3dSphereGeometries = () => {
 
     };
 
-    // ---------------------------------
-    // GUI生成処理
-    // ---------------------------------
+    // // ---------------------------------
+    // // GUI生成処理
+    // // ---------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // radius
-    gui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
+    // // radius
+    // gui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
 
-    // 幅(セグメント)
-    gui.add(controls, 'widthSegments', 0, 20).onChange(controls.redraw);
+    // // 幅(セグメント)
+    // gui.add(controls, 'widthSegments', 0, 20).onChange(controls.redraw);
 
-    // 高さ(セグメント)
-    gui.add(controls, 'heightSegments', 0, 20).onChange(controls.redraw);
+    // // 高さ(セグメント)
+    // gui.add(controls, 'heightSegments', 0, 20).onChange(controls.redraw);
 
-    // phiStart
-    gui.add(controls, 'phiStart', 0, 2 * Math.PI).onChange(controls.redraw);
+    // // phiStart
+    // gui.add(controls, 'phiStart', 0, 2 * Math.PI).onChange(controls.redraw);
 
-    // phiLength
-    gui.add(controls, 'phiLength', 0, 2 * Math.PI).onChange(controls.redraw);
+    // // phiLength
+    // gui.add(controls, 'phiLength', 0, 2 * Math.PI).onChange(controls.redraw);
 
-    // thetaStart
-    gui.add(controls, 'thetaStart', 0, 2 * Math.PI).onChange(controls.redraw);
+    // // thetaStart
+    // gui.add(controls, 'thetaStart', 0, 2 * Math.PI).onChange(controls.redraw);
 
-    // thetaLength
-    gui.add(controls, 'thetaLength', 0, 2 * Math.PI).onChange(controls.redraw);
+    // // thetaLength
+    // gui.add(controls, 'thetaLength', 0, 2 * Math.PI).onChange(controls.redraw);
 
     // レンダリング処理を実行する
     render();
