@@ -1,6 +1,5 @@
 let scene;
 let camera;
-let renderer;
 
 let width = window.innerWidth;
 let height = 500;
@@ -131,26 +130,26 @@ export const make2dRingGeometries = () => {
     // GUI設定処理
     // ------------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // 内部Radius
-    gui.add(controls, 'innerRadius', 0, 40).onChange(controls.redraw);
+    // // 内部Radius
+    // gui.add(controls, 'innerRadius', 0, 40).onChange(controls.redraw);
 
-    // 外部Radius
-    gui.add(controls, 'outerRadius', 0, 100).onChange(controls.redraw);
+    // // 外部Radius
+    // gui.add(controls, 'outerRadius', 0, 100).onChange(controls.redraw);
 
-    // シータセグメント
-    gui.add(controls, 'thetaSegments', 1, 40).step(1).onChange(controls.redraw);
+    // // シータセグメント
+    // gui.add(controls, 'thetaSegments', 1, 40).step(1).onChange(controls.redraw);
 
-    // phiセグメント
-    gui.add(controls, 'phiSegments', 1, 20).step(1).onChange(controls.redraw);
+    // // phiセグメント
+    // gui.add(controls, 'phiSegments', 1, 20).step(1).onChange(controls.redraw);
 
-    // シータスタート
-    gui.add(controls, 'thetaStart', 0, Math.PI * 2).onChange(controls.redraw);
+    // // シータスタート
+    // gui.add(controls, 'thetaStart', 0, Math.PI * 2).onChange(controls.redraw);
 
-    // シータレングス
-    gui.add(controls, 'thetaLength', 0, Math.PI * 2).onChange(controls.redraw);
+    // // シータレングス
+    // gui.add(controls, 'thetaLength', 0, Math.PI * 2).onChange(controls.redraw);
 
     // ------------------------------------------
     // レンダラ設定処理
