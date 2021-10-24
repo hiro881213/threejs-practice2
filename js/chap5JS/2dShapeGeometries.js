@@ -1,6 +1,5 @@
 let scene;
 let camera;
-let renderer;
 
 let width = window.innerWidth;
 let height = 500;
@@ -118,12 +117,12 @@ export const make2dShapeGeometries = () => {
     // GUI設定処理
     // -----------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    gui.add(controls, 'asGeom');
-    gui.add(controls, 'asPoints');
-    gui.add(controls, 'asSpacedPoints');
+    // gui.add(controls, 'asGeom');
+    // gui.add(controls, 'asPoints');
+    // gui.add(controls, 'asSpacedPoints');
 
     // -----------------------------------
     // レンダリング処理
