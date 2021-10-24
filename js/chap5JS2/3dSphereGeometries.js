@@ -5,7 +5,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const make3dSphereGeometries = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 

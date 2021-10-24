@@ -108,36 +108,36 @@ export const make3dCylinderGeometries = () => {
 
     };
 
-    // ---------------------------------------
-    // GUI生成処理
-    // ---------------------------------------
+    // // ---------------------------------------
+    // // GUI生成処理
+    // // ---------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // radiusTop
-    gui.add(controls, 'radiusTop', -40, 40).onChange(controls.redraw);
+    // // radiusTop
+    // gui.add(controls, 'radiusTop', -40, 40).onChange(controls.redraw);
 
-    // radiusBottom
-    gui.add(controls, 'radiusBottom', -40, 40).onChange(controls.redraw);
+    // // radiusBottom
+    // gui.add(controls, 'radiusBottom', -40, 40).onChange(controls.redraw);
 
-    // 高さ
-    gui.add(controls, 'height', 0, 40).onChange(controls.redraw);
+    // // 高さ
+    // gui.add(controls, 'height', 0, 40).onChange(controls.redraw);
 
-    // radialSegments
-    gui.add(controls, 'radialSegments', 1, 20).step(1).onChange(controls.redraw);
+    // // radialSegments
+    // gui.add(controls, 'radialSegments', 1, 20).step(1).onChange(controls.redraw);
 
-    // heightSegments
-    gui.add(controls, 'heightSegments', 1, 20).step(1).onChange(controls.redraw);
+    // // heightSegments
+    // gui.add(controls, 'heightSegments', 1, 20).step(1).onChange(controls.redraw);
 
-    //  openend
-    gui.add(controls, 'openEnded').onChange(controls.redraw);
+    // //  openend
+    // gui.add(controls, 'openEnded').onChange(controls.redraw);
 
-    // thetaStart
-    gui.add(controls, 'thetaStart', 0, 2 * Math.PI).onChange(controls.redraw);
+    // // thetaStart
+    // gui.add(controls, 'thetaStart', 0, 2 * Math.PI).onChange(controls.redraw);
 
-    // thetaLength
-    gui.add(controls, 'thetaLength', 0, 2 * Math.PI).onChange(controls.redraw);
+    // // thetaLength
+    // gui.add(controls, 'thetaLength', 0, 2 * Math.PI).onChange(controls.redraw);
 
     // レンダリング処理を実行する
     render();
