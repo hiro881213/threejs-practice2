@@ -1,6 +1,8 @@
 import { make3dSphereGeometries } from './3dSphereGeometries.js'
 import { make3dCylinderGeometries } from './3dCylinderGeometries.js'
 import { make3dTorusGeometries } from './3dTorusGeometries.js'
+import { make3dRingGeometries } from './3dRingGeometries.js'
+
 
 // ------------------------------------------------
 // グローバル変数
@@ -22,5 +24,8 @@ window.onload = function() {
 
     // 3Dトーラスアニメーション
     make3dTorusGeometries();
+
+    // 3Dリングアニメーション
+    make3dRingGeometries();
 
 };

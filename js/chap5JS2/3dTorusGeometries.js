@@ -5,7 +5,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const make3dTorusGeometries = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 
@@ -96,27 +96,27 @@ export const make3dTorusGeometries = () => {
 
     };
 
-    // ---------------------------------
-    // GUI生成処理
-    // ---------------------------------
+    // // ---------------------------------
+    // // GUI生成処理
+    // // ---------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // radius
-    gui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
+    // // radius
+    // gui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
 
-    // tube
-    gui.add(controls, 'tube', 0, 40).onChange(controls.redraw);
+    // // tube
+    // gui.add(controls, 'tube', 0, 40).onChange(controls.redraw);
 
-    // radialSegments
-    gui.add(controls, 'radialSegments', 0, 40).onChange(controls.redraw);
+    // // radialSegments
+    // gui.add(controls, 'radialSegments', 0, 40).onChange(controls.redraw);
 
-    // tubularセグメント
-    gui.add(controls, 'tubularSegments', 1, 20).onChange(controls.redraw);
+    // // tubularセグメント
+    // gui.add(controls, 'tubularSegments', 1, 20).onChange(controls.redraw);
 
-    // arc
-    gui.add(controls, 'arc', 0, Math.PI * 2).onChange(controls.redraw);
+    // // arc
+    // gui.add(controls, 'arc', 0, Math.PI * 2).onChange(controls.redraw);
 
     // レンダリング処理
     render();
