@@ -99,30 +99,30 @@ export const make3dRingGeometries = () => {
 
     };
 
-    // ----------------------------------------
-    // GUI生成処理
-    // ----------------------------------------
+    // // ----------------------------------------
+    // // GUI生成処理
+    // // ----------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // 内部Radius
-    gui.add(controls, 'innerRadius', 0, 40).onChange(controls.redraw);
+    // // 内部Radius
+    // gui.add(controls, 'innerRadius', 0, 40).onChange(controls.redraw);
 
-    // 外部Radius
-    gui.add(controls, 'outerRadius', 0, 100).onChange(controls.redraw);
+    // // 外部Radius
+    // gui.add(controls, 'outerRadius', 0, 100).onChange(controls.redraw);
 
-    // thetaセグメント
-    gui.add(controls, 'thetaSegments', 0, 40).step(1).onChange(controls.redraw);
+    // // thetaセグメント
+    // gui.add(controls, 'thetaSegments', 0, 40).step(1).onChange(controls.redraw);
 
-    // phiセグメント
-    gui.add(controls, 'phiSegments', 1, 20).step(1).onChange(controls.redraw);
+    // // phiセグメント
+    // gui.add(controls, 'phiSegments', 1, 20).step(1).onChange(controls.redraw);
 
-    // thetaStart
-    gui.add(controls, 'thetaStart', 0, Math.PI *2).onChange(controls.redraw);
+    // // thetaStart
+    // gui.add(controls, 'thetaStart', 0, Math.PI *2).onChange(controls.redraw);
 
-    // thetaLength
-    gui.add(controls, 'thetaLength', 0, Math.PI * 2).onChange(controls.redraw);
+    // // thetaLength
+    // gui.add(controls, 'thetaLength', 0, Math.PI * 2).onChange(controls.redraw);
 
     render();
 
