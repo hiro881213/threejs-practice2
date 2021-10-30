@@ -1,3 +1,5 @@
+import { makeConvexGeometries } from './convexGeometries.js'
+
 
 // ------------------------------------------------
 // グローバル変数
@@ -10,5 +12,8 @@ const swiper = new Swiper(".swiper-container");
  */
 
 window.onload = function() {
-    alert();
+    
+    // convexアニメーション生成処理
+    makeConvexGeometries();
+
 }
