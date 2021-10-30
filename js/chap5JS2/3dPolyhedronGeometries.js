@@ -118,21 +118,21 @@ export const make3dPolyhedronGeometries = () => {
 
     };
 
-    // ----------------------------------
-    // GUI生成処理
-    // ----------------------------------
+    // // ----------------------------------
+    // // GUI生成処理
+    // // ----------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // radius
-    gui.add(controls, 'radius', 0, 40).step(1).onChange(controls.redraw);
+    // // radius
+    // gui.add(controls, 'radius', 0, 40).step(1).onChange(controls.redraw);
 
-    // detail
-    gui.add(controls, 'detail', 0, 3).step(1).onChange(controls.redraw);
+    // // detail
+    // gui.add(controls, 'detail', 0, 3).step(1).onChange(controls.redraw);
 
-    // type
-    gui.add(controls, 'type', ['Icosahedron', 'Tetrahedron', 'Octahedron', 'Dodecahedron', 'Custom']).onChange(controls.redraw);
+    // // type
+    // gui.add(controls, 'type', ['Icosahedron', 'Tetrahedron', 'Octahedron', 'Dodecahedron', 'Custom']).onChange(controls.redraw);
 
     // レンダリングを実行する
     render();

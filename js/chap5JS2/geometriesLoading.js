@@ -4,6 +4,7 @@ import { make3dTorusGeometries } from './3dTorusGeometries.js'
 import { make3dRingGeometries } from './3dRingGeometries.js'
 import { make3dTorusKnotGeometries } from './3dTorusKnotGeometries.js'
 import { make3dPolyhedronGeometries } from './3dPolyhedronGeometries.js'
+import { make3dConeGeometries } from './3dConeGeometries.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -34,5 +35,8 @@ window.onload = function() {
 
     // 3DPolyhedronアニメーション
     make3dPolyhedronGeometries();
+
+    // 3Dコーンアニメーション
+    make3dConeGeometries();
 
 };
