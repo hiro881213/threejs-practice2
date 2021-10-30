@@ -3,6 +3,7 @@ import { make3dCylinderGeometries } from './3dCylinderGeometries.js'
 import { make3dTorusGeometries } from './3dTorusGeometries.js'
 import { make3dRingGeometries } from './3dRingGeometries.js'
 import { make3dTorusKnotGeometries } from './3dTorusKnotGeometries.js'
+import { make3dPolyhedronGeometries } from './3dPolyhedronGeometries.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -30,5 +31,8 @@ window.onload = function() {
 
     // 3Dトーラスアニメーション
     make3dTorusKnotGeometries();
+
+    // 3DPolyhedronアニメーション
+    make3dPolyhedronGeometries();
 
 };

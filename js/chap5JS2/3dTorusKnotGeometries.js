@@ -5,7 +5,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const make3dTorusKnotGeometries = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 
@@ -98,30 +98,30 @@ export const make3dTorusKnotGeometries = () => {
 
     };
 
-    // ---------------------------------
-    // GUI設定処理
-    // ---------------------------------
+    // // ---------------------------------
+    // // GUI設定処理
+    // // ---------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // radius
-    gui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
+    // // radius
+    // gui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
 
-    // tube
-    gui.add(controls, 'tube', 0, 40).onChange(controls.redraw);
+    // // tube
+    // gui.add(controls, 'tube', 0, 40).onChange(controls.redraw);
 
-    // radialセグメント
-    gui.add(controls, 'radialSegments', 0, 400).step(1).onChange(controls.redraw);
+    // // radialセグメント
+    // gui.add(controls, 'radialSegments', 0, 400).step(1).onChange(controls.redraw);
 
-    // tubularセグメント
-    gui.add(controls, 'tubularSegments', 1, 20).step(1).onChange(controls.redraw);
+    // // tubularセグメント
+    // gui.add(controls, 'tubularSegments', 1, 20).step(1).onChange(controls.redraw);
 
-    // p
-    gui.add(controls, 'p', 1, 10).step(1).onChange(controls.redraw);
+    // // p
+    // gui.add(controls, 'p', 1, 10).step(1).onChange(controls.redraw);
 
-    // q
-    gui.add(controls,'q', 1, 15).step(1).onChange(controls.redraw);
+    // // q
+    // gui.add(controls,'q', 1, 15).step(1).onChange(controls.redraw);
 
     render();
 
