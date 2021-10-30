@@ -71,15 +71,15 @@ export const makeConvexGeometries = () => {
 
     };
 
-    // ----------------------------------
-    // GUI生成処理
-    // ----------------------------------
+    // // ----------------------------------
+    // // GUI生成処理
+    // // ----------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // 再描画処理
-    gui.add(controls, 'redraw');
+    // // 再描画処理
+    // gui.add(controls, 'redraw');
 
     // レンダラ処理を実行する
     render();
