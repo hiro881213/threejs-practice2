@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeExtrudeSvgGeometries = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 
@@ -130,33 +130,33 @@ export const makeExtrudeSvgGeometries = () => {
 
     };
 
-    // -----------------------------------
-    // GUI生成処理
-    // -----------------------------------
+    // // -----------------------------------
+    // // GUI生成処理
+    // // -----------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // amount
-    gui.add(controls, 'amount', 0, 20).onChange(controls.asGeom);
+    // // amount
+    // gui.add(controls, 'amount', 0, 20).onChange(controls.asGeom);
 
-    // bevelThickness
-    gui.add(controls, 'bevelThickness', 0, 10).onChange(controls.asGeom);
+    // // bevelThickness
+    // gui.add(controls, 'bevelThickness', 0, 10).onChange(controls.asGeom);
 
-    // bevelSize
-    gui.add(controls, 'bevelSize', 0, 10).onChange(controls.asGeom);
+    // // bevelSize
+    // gui.add(controls, 'bevelSize', 0, 10).onChange(controls.asGeom);
 
-    // bevelセグメント
-    gui.add(controls, 'bevelSegments', 0, 30).step(1).onChange(controls.asGeom);
+    // // bevelセグメント
+    // gui.add(controls, 'bevelSegments', 0, 30).step(1).onChange(controls.asGeom);
 
-    // bevelEnabled
-    gui.add(controls, 'bevelEnabled').onChange(controls.asGeom);
+    // // bevelEnabled
+    // gui.add(controls, 'bevelEnabled').onChange(controls.asGeom);
 
-    // curveSegments
-    gui.add(controls, 'curveSegments', 1, 30).step(1).onChange(controls.asGeom);
+    // // curveSegments
+    // gui.add(controls, 'curveSegments', 1, 30).step(1).onChange(controls.asGeom);
 
-    // steps
-    gui.add(controls, 'steps', 1, 5).step(1).onChange(controls.asGeom);
+    // // steps
+    // gui.add(controls, 'steps', 1, 5).step(1).onChange(controls.asGeom);
 
     // 描画処理
     controls.asGeom();
