@@ -1,5 +1,6 @@
 import { makeExtrudeSvgGeometries } from './extudeSvgGeometries.js'
 import { makeParametricGeometries } from './parametricGeometries.js'
+import { makeTextGeometries }       from './textGeometries.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -18,5 +19,8 @@ window.onload = function() {
 
     // parametricアニメーションを生成する
     makeParametricGeometries();
+
+    // textアニメーションを生成する
+    makeTextGeometries();
 
 }

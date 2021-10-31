@@ -140,21 +140,21 @@ export const makeParametricGeometries = () => {
 
     };
 
-    // ------------------------------------
-    // GUI生成処理
-    // ------------------------------------
+    // // ------------------------------------
+    // // GUI生成処理
+    // // ------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // func
-    gui.add(controls, 'func', ['klein', 'radialWave']).onChange(controls.redraw);
+    // // func
+    // gui.add(controls, 'func', ['klein', 'radialWave']).onChange(controls.redraw);
 
-    // slices
-    gui.add(controls, 'slices', 10, 200).step(5).onChange(controls.redraw);
+    // // slices
+    // gui.add(controls, 'slices', 10, 200).step(5).onChange(controls.redraw);
 
-    // stacks
-    gui.add(controls, 'stacks', 10, 200).step(5).onChange(controls.redraw);
+    // // stacks
+    // gui.add(controls, 'stacks', 10, 200).step(5).onChange(controls.redraw);
 
     // 再描画処理
     controls.redraw();
