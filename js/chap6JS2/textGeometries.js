@@ -161,36 +161,36 @@ export const makeTextGeometries = () => {
         // 描画処理を実行する
         controls.asGeom();
 
-        // -----------------------------------------
-        // GUI生成処理
-        // -----------------------------------------
+        // // -----------------------------------------
+        // // GUI生成処理
+        // // -----------------------------------------
 
-        // GUIを生成する
-        let gui = new dat.GUI();
+        // // GUIを生成する
+        // let gui = new dat.GUI();
 
-        // size
-        gui.add(controls, 'size', 0, 200).onChange(controls.asGeom);
+        // // size
+        // gui.add(controls, 'size', 0, 200).onChange(controls.asGeom);
 
-        // height
-        gui.add(controls, 'height', 0, 200).onChange(controls.asGeom);
+        // // height
+        // gui.add(controls, 'height', 0, 200).onChange(controls.asGeom);
 
-        // フォント
-        gui.add(controls, 'font', ['optimer', 'helvetiker']).onChange(controls.asGeom);
+        // // フォント
+        // gui.add(controls, 'font', ['optimer', 'helvetiker']).onChange(controls.asGeom);
 
-        // bevelThickness
-        gui.add(controls, 'bevelThickness', 0, 10).onChange(controls.asGeom);
+        // // bevelThickness
+        // gui.add(controls, 'bevelThickness', 0, 10).onChange(controls.asGeom);
 
-        // bevelSize
-        gui.add(controls, 'bevelSize', 0, 10).onChange(controls.asGeom);
+        // // bevelSize
+        // gui.add(controls, 'bevelSize', 0, 10).onChange(controls.asGeom);
 
-        // bevelEnabled
-        gui.add(controls, 'bevelSegments', 0, 30).step(1).onChange(controls.asGeom);
+        // // bevelEnabled
+        // gui.add(controls, 'bevelSegments', 0, 30).step(1).onChange(controls.asGeom);
 
-        // curveSegments
-        gui.add(controls, 'curveSegments', 1, 30).step(1).onChange(controls.asGeom);
+        // // curveSegments
+        // gui.add(controls, 'curveSegments', 1, 30).step(1).onChange(controls.asGeom);
 
-        // steps
-        gui.add(controls, 'steps', 1, 5).step(1).onChange(controls.asGeom);
+        // // steps
+        // gui.add(controls, 'steps', 1, 5).step(1).onChange(controls.asGeom);
 
         // レンダリング処理
         render();
