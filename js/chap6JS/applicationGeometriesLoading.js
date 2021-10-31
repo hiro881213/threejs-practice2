@@ -1,5 +1,6 @@
 import { makeConvexGeometries } from './convexGeometries.js'
 import { makeLatheGeometries  } from './latheGeometries.js' 
+import { makeExtrudeGeometries } from './extrudeGeometries.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -18,5 +19,8 @@ window.onload = function() {
 
     // Latheアニメーション生成処理
     makeLatheGeometries();
+
+    // Extrudeアニメーション生成処理
+    makeExtrudeGeometries();
 
 }

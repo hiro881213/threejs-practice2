@@ -5,7 +5,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeLatheGeometries = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 
@@ -84,21 +84,21 @@ export const makeLatheGeometries = () => {
     // 頂点描画処理
     generatePoints(controls.segments, controls.phiStart, controls.phiLength);
 
-    // -----------------------------------
-    // GUI生成処理
-    // -----------------------------------
+    // // -----------------------------------
+    // // GUI生成処理
+    // // -----------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // セグメント
-    gui.add(controls, 'segments', 0, 50).step(1).onChange(controls.redraw);
+    // // セグメント
+    // gui.add(controls, 'segments', 0, 50).step(1).onChange(controls.redraw);
 
-    // phiStart
-    gui.add(controls, 'phiStart', 0, 2 * Math.PI).onChange(controls.redraw);
+    // // phiStart
+    // gui.add(controls, 'phiStart', 0, 2 * Math.PI).onChange(controls.redraw);
 
-    // phiLength
-    gui.add(controls, 'phiLength', 0, 2 * Math.PI).onChange(controls.redraw);
+    // // phiLength
+    // gui.add(controls, 'phiLength', 0, 2 * Math.PI).onChange(controls.redraw);
 
     // レンダラ処理を実行する
     render();
