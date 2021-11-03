@@ -81,31 +81,31 @@ export const makeBasicPointCloud = () => {
 
     };
 
-    // --------------------------------------
-    // GUI生成処理
-    // --------------------------------------
+    // // --------------------------------------
+    // // GUI生成処理
+    // // --------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // サイズ
-    gui.add(controls, 'size', 0, 10).onChange(controls.redraw);
+    // // サイズ
+    // gui.add(controls, 'size', 0, 10).onChange(controls.redraw);
 
-    // 透過性
-    gui.add(controls, 'transparent').onChange(controls.redraw);
-    gui.add(controls, 'opacity', 0, 1).onChange(controls.redraw);
+    // // 透過性
+    // gui.add(controls, 'transparent').onChange(controls.redraw);
+    // gui.add(controls, 'opacity', 0, 1).onChange(controls.redraw);
 
-    // vertexColor
-    gui.add(controls, 'vertexColors').onChange(controls.redraw);
+    // // vertexColor
+    // gui.add(controls, 'vertexColors').onChange(controls.redraw);
 
-    // color
-    gui.addColor(controls, 'color').onChange(controls.redraw);
+    // // color
+    // gui.addColor(controls, 'color').onChange(controls.redraw);
 
-    // sizeAttenuation
-    gui.add(controls, 'sizeAttenuation').onChange(controls.redraw);
+    // // sizeAttenuation
+    // gui.add(controls, 'sizeAttenuation').onChange(controls.redraw);
 
-    // rotateSystem
-    gui.add(controls, 'rotateSystem').onChange(controls.redraw);
+    // // rotateSystem
+    // gui.add(controls, 'rotateSystem').onChange(controls.redraw);
 
     // 再描画処理を実行する
     controls.redraw();
