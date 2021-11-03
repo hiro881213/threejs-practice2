@@ -26,4 +26,5 @@ window.onload = function() {
     // プログラマブルスピリットアニメーションを生成する
     makeProgramBasedSprites();
 
+    // 5a 5b NG
 };
