@@ -1,4 +1,5 @@
 import { makeRainyScene } from './rainyScene.js'
+import { makeSnowyScene } from './snowyScene.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -12,5 +13,9 @@ const swiper = new Swiper(".swiper-container");
 window.onload = function() {
 
     // レイニーシーンアニメーションを生成する
-    makeRainyScene();
+    // makeRainyScene();
+
+    // スノーシーンアニメーションを生成する
+    makeSnowyScene();
+
 };
