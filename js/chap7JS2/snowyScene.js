@@ -4,12 +4,12 @@ let camera;
 let width = window.innerWidth;
 let height = 500;
 export const makeSnowyScene = () => {
-    
+
     // シーンを生成する
-    let scene = new THREE.Scene();
+    scene = new THREE.Scene();
 
     // カメラを生成する
-    let camera = new THREE.PerspectiveCamera(45, width/height, 0.1, 1000);
+    camera = new THREE.PerspectiveCamera(45, width/height, 0.1, 1000);
 
     // -----------------------------------
     // レンダラ生成処理
