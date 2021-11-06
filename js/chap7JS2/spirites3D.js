@@ -1,14 +1,12 @@
 let scene;
-let sceneOrtho;
 
 let camera;
-let cameraOrtho;
 
 let width = window.innerWidth;
 let height = 500;
 
 export const makeSprites3D = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 
