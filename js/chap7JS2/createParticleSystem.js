@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeCreateParticleSystem = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 
