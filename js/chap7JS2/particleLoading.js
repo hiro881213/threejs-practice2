@@ -20,7 +20,7 @@ window.onload = function() {
     // // スノーシーンアニメーションを生成する
     // makeSnowyScene();
 
-    // スプリッツアニメーションを生成する
-    makeSprites();
+    // // スプリッツアニメーションを生成する
+    // makeSprites();
 
 };

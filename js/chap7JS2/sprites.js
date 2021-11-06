@@ -1,5 +1,8 @@
 let scene;
+let sceneOrtho;
+
 let camera;
+let cameraOrtho;
 
 let width = window.innerWidth;
 let height = 500;
@@ -136,8 +139,10 @@ export const makeSprites = () => {
     controls.redraw();
 
     // ------------------------------
-    // sprites生成処理
+    // sprites生成関数
     // ------------------------------
+
+    let step = 0;
 
     // レンダリング処理を実行する
     render();
@@ -151,6 +156,73 @@ export const makeSprites = () => {
             transparent: transparent,
             map: getTexture()
         });
+
+        // テクスチャの位置を設定する
+        spriteMaterial.map.offset = new THREE.Vector2(0.2 * spriteNumber, 0);
+        spriteMaterial.map.repeat = new THREE.Vector2(1/5, 1);
+        spriteMaterial.depthTest = false;
+
+        spriteMaterial.blending = THREE.AdditiveBlending;
+
+        // メッシュを生成する
+        let sprite = new THREE.Sprite(spriteMaterial);
+
+        // メッシュのスケールを設定する
+        sprite.scale.set(size, size, size);
+
+        // メッシュの位置を設定する
+        sprite.position.set(100, 50, -10);
+
+        // velocity
+        sprite.velocityX = 5;
+
+        // シーンにスプリッツを追加する
+        sceneOrtho.add(sprite);
+
+    }
+
+    // ------------------------------
+    // レンダリング処理生成関数
+    // ------------------------------
+
+    function render() {
+
+        // カメラの位置を設定する
+        camera.position.y = Math.sin(step += 0.01) * 20;
+
+        sceneOrtho.children.forEach((e) => {
+
+            if (e instanceof THREE.Sprite) {
+
+                // 位置を設定する
+                e.position.x = e.position.x + e.velocityX;
+
+                if (e.position.x > width) {
+
+                    e.velocityX = -5;
+                    controls.sprite = (controls.sprite + 1)%5;
+
+                    // マテリアルの位置を調整する
+                    e.material.map.offset.set(1/5 * controls.sprite, 0);
+
+                }
+
+                if (e.position.x < 0) {
+                    
+                    e.velocityX = 5;
+
+                }
+
+            }
+
+        });
+
+        // アニメーション生成処理
+        requestAnimationFrame(render);
+
+        webGLRenderer.render(scene, camera);
+        webGLRenderer.autoClear = false;
+        webGLRenderer.render(sceneOrtho, cameraOrtho);
 
     }
 
