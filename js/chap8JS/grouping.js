@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeGrouping = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 
@@ -179,131 +179,131 @@ export const makeGrouping = () => {
 
     };
 
-    // ---------------------------------------------------
-    // GUI生成処理
-    // ---------------------------------------------------
+    // // ---------------------------------------------------
+    // // GUI生成処理
+    // // ---------------------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // 球体フォルダを生成する
-    let sphereFolder = gui.addFolder("sphere");
+    // // 球体フォルダを生成する
+    // let sphereFolder = gui.addFolder("sphere");
 
-    // 球体位置X
-    sphereFolder.add(controls, "spherePosX", -20, 20).onChange((e) => {
+    // // 球体位置X
+    // sphereFolder.add(controls, "spherePosX", -20, 20).onChange((e) => {
         
-        // 球体位置を設定する
-        sphere.position.x = e;
-        controls.positionBoundingBox();
+    //     // 球体位置を設定する
+    //     sphere.position.x = e;
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // 球体位置Z
-    sphereFolder.add(controls, "spherePosZ", -20, 20).onChange((e) => {
+    // // 球体位置Z
+    // sphereFolder.add(controls, "spherePosZ", -20, 20).onChange((e) => {
 
-        // 球体位置を設定する
-        sphere.position.z = e;
-        controls.positionBoundingBox();
+    //     // 球体位置を設定する
+    //     sphere.position.z = e;
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // 球体位置Y
-    sphereFolder.add(controls, "spherePosY", -20, 20).onChange((e) => {
+    // // 球体位置Y
+    // sphereFolder.add(controls, "spherePosY", -20, 20).onChange((e) => {
 
-        // 球体位置を設定する
-        sphere.position.y = e;
-        controls.positionBoundingBox();
+    //     // 球体位置を設定する
+    //     sphere.position.y = e;
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // 球体スケール
-    sphereFolder.add(controls, "sphereScale", 0, 3).onChange((e) => {
+    // // 球体スケール
+    // sphereFolder.add(controls, "sphereScale", 0, 3).onChange((e) => {
 
-        sphere.scale.set(e, e, e);
-        controls.positionBoundingBox();
+    //     sphere.scale.set(e, e, e);
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // 立方体フォルダを設定する
-    let cubeFolder = gui.addFolder("cube");
+    // // 立方体フォルダを設定する
+    // let cubeFolder = gui.addFolder("cube");
 
-    // 立方体位置X
-    cubeFolder.add(controls, "cubePosX", -20, 20).onChange((e) => {
+    // // 立方体位置X
+    // cubeFolder.add(controls, "cubePosX", -20, 20).onChange((e) => {
 
-        // 立方体位置を設定する
-        cube.position.x = e;
-        controls.positionBoundingBox();
+    //     // 立方体位置を設定する
+    //     cube.position.x = e;
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // 立方体位置Z
-    cubeFolder.add(controls, "cubePosZ", -20, 20).onChange((e) => {
+    // // 立方体位置Z
+    // cubeFolder.add(controls, "cubePosZ", -20, 20).onChange((e) => {
 
-        // 立方体位置を設定する
-        cube.position.z = e;
-        controls.positionBoundingBox();
+    //     // 立方体位置を設定する
+    //     cube.position.z = e;
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // 立方体位置Y
-    cubeFolder.add(controls, "cubePosY", -20, 20).onChange((e) => {
+    // // 立方体位置Y
+    // cubeFolder.add(controls, "cubePosY", -20, 20).onChange((e) => {
 
-        // 立方体位置を設定する
-        cube.position.y = e;
-        controls.positionBoundingBox();
+    //     // 立方体位置を設定する
+    //     cube.position.y = e;
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // 立方体スケール
-    cubeFolder.add(controls, "cubeScale", 0, 3).onChange((e) => {
+    // // 立方体スケール
+    // cubeFolder.add(controls, "cubeScale", 0, 3).onChange((e) => {
 
-        // 立方体のスケールを設定する
-        cube.scale.set(e, e, e);
-        controls.positionBoundingBox();
+    //     // 立方体のスケールを設定する
+    //     cube.scale.set(e, e, e);
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // グループフォルダを生成する
-    let groupFolder = gui.addFolder("group");
+    // // グループフォルダを生成する
+    // let groupFolder = gui.addFolder("group");
 
-    // グループ位置X
-    groupFolder.add(controls, "groupPosX", -20, 20).onChange((e) => {
+    // // グループ位置X
+    // groupFolder.add(controls, "groupPosX", -20, 20).onChange((e) => {
 
-        // グループの位置を設定する
-        group.position.x = e;
-        controls.positionBoundingBox();
+    //     // グループの位置を設定する
+    //     group.position.x = e;
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // グループ位置Z
-    groupFolder.add(controls, "groupPosZ", -20, 20).onChange((e) => {
+    // // グループ位置Z
+    // groupFolder.add(controls, "groupPosZ", -20, 20).onChange((e) => {
 
-        // グループの位置を設定する
-        group.position.z = e;
-        controls.positionBoundingBox();
+    //     // グループの位置を設定する
+    //     group.position.z = e;
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // グループ位置Y
-    groupFolder.add(controls, "groupPosY", -20, 20).onChange((e) => {
+    // // グループ位置Y
+    // groupFolder.add(controls, "groupPosY", -20, 20).onChange((e) => {
 
-        // グループの位置を設定する
-        group.position.y = e;
-        controls.positionBoundingBox();
+    //     // グループの位置を設定する
+    //     group.position.y = e;
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    // グループスケール
-    groupFolder.add(controls, "groupScale", 0, 3).onChange((e) => {
+    // // グループスケール
+    // groupFolder.add(controls, "groupScale", 0, 3).onChange((e) => {
 
-        // グループスケールを設定する
-        group.scale.set(e, e, e);   
-        controls.positionBoundingBox();
+    //     // グループスケールを設定する
+    //     group.scale.set(e, e, e);   
+    //     controls.positionBoundingBox();
 
-    });
+    // });
 
-    gui.add(controls, "grouping");
-    gui.add(controls, "rotate");
+    // gui.add(controls, "grouping");
+    // gui.add(controls, "rotate");
 
     // 再描画処理
     controls.redraw();
