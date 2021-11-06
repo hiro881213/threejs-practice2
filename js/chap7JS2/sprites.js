@@ -8,7 +8,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeSprites = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
     sceneOrtho = new THREE.Scene();
