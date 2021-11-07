@@ -1,5 +1,6 @@
 import { loadObjMtl } from  './loadObjMtl.js'
 import { loadCollada } from './loadCollada.js'
+import { loadStl } from './loadStl.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -17,5 +18,8 @@ window.onload = function() {
 
     // Colladaアニメーションを生成する
     loadCollada();
+
+    // stlアニメーションを生成する
+    loadStl();
 
 }
