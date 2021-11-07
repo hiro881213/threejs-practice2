@@ -2,6 +2,7 @@ import { loadObjMtl } from  './loadObjMtl.js'
 import { loadCollada } from './loadCollada.js'
 import { loadStl } from './loadStl.js'
 import { loadCtm } from './loadCtm.js'
+import { loadVtk } from './loadVtk.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -25,5 +26,8 @@ window.onload = function() {
 
     // ctmアニメーションを生成する
     loadCtm();
+
+    // vtkアニメーションを生成する
+    loadVtk();
 
 }
