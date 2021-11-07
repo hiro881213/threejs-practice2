@@ -1,4 +1,5 @@
-import { loadObjMtl } from './loadObjMtl.js'
+import { loadObjMtl } from  './loadObjMtl.js'
+import { loadCollada } from './loadCollada.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -13,5 +14,8 @@ window.onload = function() {
 
     // MTLオブジェクトアニメーションを生成する
     loadObjMtl();
+
+    // Colladaアニメーションを生成する
+    loadCollada();
 
 }
