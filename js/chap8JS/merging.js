@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeMerging = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 
@@ -133,21 +133,21 @@ export const makeMerging = () => {
 
     };
 
-    // ------------------------------------
-    // GUI生成処理
-    // ------------------------------------
+    // // ------------------------------------
+    // // GUI生成処理
+    // // ------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // numberOfObjects
-    gui.add(controls, 'numberOfObjects', 0, 20000);
+    // // numberOfObjects
+    // gui.add(controls, 'numberOfObjects', 0, 20000);
 
-    // combined
-    gui.add(controls, 'combined').onChange(controls.redraw);
+    // // combined
+    // gui.add(controls, 'combined').onChange(controls.redraw);
 
-    // redraw
-    gui.add(controls, 'redraw');
+    // // redraw
+    // gui.add(controls, 'redraw');
 
     // 再描画処理を実行する
     controls.redraw();

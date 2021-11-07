@@ -1,5 +1,6 @@
 import { makeGrouping } from './grouping.js'
 import { makeMerging  } from './merging.js'
+import { loadSaveJsonObject } from './loadSaveJsonObject.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -17,5 +18,8 @@ window.onload = function() {
     
     // マージンアニメーションを生成する
     makeMerging();
+
+    // jsonロードアニメーションを生成する
+    loadSaveJsonObject();
 
 };
