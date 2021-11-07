@@ -2,6 +2,8 @@ import { makeGrouping } from './grouping.js'
 import { makeMerging  } from './merging.js'
 import { loadSaveJsonObject } from './loadSaveJsonObject.js'
 import { loadBlenderJsonObject } from './blenderJsonLoading.js'
+import { loadObject } from './loadObj.js'
+
 
 // ------------------------------------------------
 // グローバル変数
@@ -25,5 +27,8 @@ window.onload = function() {
 
     // // Blenderロードアニメーションを生成する
     // loadBlenderJsonObject();
+
+    // ロードオブジェクトアニメーションを生成する
+    loadObject();
 
 };
