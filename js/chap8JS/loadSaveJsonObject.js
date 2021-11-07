@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const loadSaveJsonObject = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 
@@ -74,7 +74,7 @@ export const loadSaveJsonObject = () => {
 
         // tubulaSegments
         this.tubularSegments = knot.geometry.parameters.tubularSegments;
-        
+
         // p
         this.p = knot.geometry.parameters.p;
 
@@ -136,24 +136,24 @@ export const loadSaveJsonObject = () => {
 
     };
 
-    // ------------------------------------------
-    // GUI生成処理
-    // ------------------------------------------
+    // // ------------------------------------------
+    // // GUI生成処理
+    // // ------------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    let ioGui = gui.addFolder('Save & Load');
+    // let ioGui = gui.addFolder('Save & Load');
 
-    ioGui.add(controls, 'save').onChange(controls.save);
-    ioGui.add(controls, 'load').onChange(controls.redraw);
+    // ioGui.add(controls, 'save').onChange(controls.save);
+    // ioGui.add(controls, 'load').onChange(controls.redraw);
 
-    let meshGui = gui.addFolder('mesh');
-    meshGui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
-    meshGui.add(controls, 'tube', 0, 40).onChange(controls.redraw);
-    meshGui.add(controls, 'radialSegments', 0, 40).step(1).onChange(controls.redraw);
-    meshGui.add(controls, 'tubularSegments', 1, 20).step(1).onChange(controls.redraw);    meshGui.add(controls, 'p', 1, 10).step(1).onChange(controls.redraw);
-    meshGui.add(controls, 'q', 1, 15).step(1).onChange(controls.redraw);
+    // let meshGui = gui.addFolder('mesh');
+    // meshGui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
+    // meshGui.add(controls, 'tube', 0, 40).onChange(controls.redraw);
+    // meshGui.add(controls, 'radialSegments', 0, 40).step(1).onChange(controls.redraw);
+    // meshGui.add(controls, 'tubularSegments', 1, 20).step(1).onChange(controls.redraw);    meshGui.add(controls, 'p', 1, 10).step(1).onChange(controls.redraw);
+    // meshGui.add(controls, 'q', 1, 15).step(1).onChange(controls.redraw);
 
     // レンダリング処理を実行する
     render();
