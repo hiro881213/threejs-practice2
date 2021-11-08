@@ -13,9 +13,11 @@
     <script type = "text/javascript" src = "./lib/three.js"></script>
     <script type = "text/javascript" src = "./lib/loaders/PDBLoader.js"></script>
     <script type = "text/javascript" src = "./lib/loaders/PLYLoader.js"></script>
+    <script type = "text/javascript" src = "./lib/loaders/AWDLoader.js"></script>
 
     <!-- three.js設定用GUIライブラリ -->
     <script type="text/javascript" src = "./lib/dat.gui.js"></script>
+    <script type="text/javascript" src = "./lib/controls/OrbitControls.js"></script>
 
     <link   rel = 'stylesheet' href = './css/index.css'>
     <script type = 'module' src = "./js/chap8JS3/loadFileLoading.js"></script>
@@ -29,8 +31,12 @@
                     <div id = 'loadObjMtl-output'></div>
                 </div>
 
-                <div class="swiper-slide">
+                <!-- <div class="swiper-slide">
                     <div id = 'loadObjPly-output'></div>
+                </div> -->
+
+                <div class="swiper-slide">
+                    <div id = 'loadObjAwd-output'></div>
                 </div>
 
             </div>
