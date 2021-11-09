@@ -2,6 +2,7 @@ import { loadPdb } from './loadPdb.js'
 import { loadPly } from './loadPly.js'
 import { loadAwd } from './loadAwd.js'
 import { loadAssimp } from './loadAssimp.js'
+import { loadVrml } from './loadVrml.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -23,6 +24,10 @@ window.onload = function() {
     // AWDアニメーションを生成する
     loadAwd();
 
-    // ASSIMPアニメーションを生成する
-    loadAssimp();
+//     // ASSIMPアニメーションを生成する
+//     loadAssimp();
+
+    // VRMLアニメーションを生成する
+    loadVrml();
+
 }
