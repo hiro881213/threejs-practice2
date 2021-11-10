@@ -156,16 +156,16 @@ export const makeBasicAnimation = () => {
 
     }
 
-    // -------------------------------------
-    // GUI生成処理
-    // -------------------------------------
+    // // -------------------------------------
+    // // GUI生成処理
+    // // -------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    gui.add(controls, 'rotationSpeed', 0, 0.5);
-    gui.add(controls, 'bouncingSpeed', 0, 0.5);
-    gui.add(controls, 'scalingSpeed' , 0, 0.5);
+    // gui.add(controls, 'rotationSpeed', 0, 0.5);
+    // gui.add(controls, 'bouncingSpeed', 0, 0.5);
+    // gui.add(controls, 'scalingSpeed' , 0, 0.5);
 
     // レンダリング処理を実行する
     render();
