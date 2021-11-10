@@ -11,10 +11,12 @@
 
     <!-- Three.js用ライブラリ -->
     <script type = "text/javascript" src = "./lib/three.js"></script>
+    <script type = "text/javascript" src = "./lib/loaders/PLYLoader.js"></script>
 
     <!-- three.js設定用GUIライブラリ -->
     <script type="text/javascript" src = "./lib/dat.gui.js"></script>
     <script type="text/javascript" src = "./lib/renderers/Projector.js"></script>
+    <script type="text/javascript" src = "./lib/Tween.js"></script>
 
     <link   rel = 'stylesheet' href = './css/index.css'>
     <script type = 'module' src = "./js/chap9JS/loadAnimetion.js"></script>
@@ -30,6 +32,10 @@
 
                 <div class="swiper-slide">
                     <div id = 'selectingObject-output'></div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div id = 'animetionTween-output'></div>
                 </div>
 
             </div>

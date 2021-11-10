@@ -179,26 +179,26 @@ export const makeSelectingObject = () => {
 
     }
 
-    // ---------------------------------
-    // GUI生成処理
-    // ---------------------------------
+    // // ---------------------------------
+    // // GUI生成処理
+    // // ---------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // 回転スピード
-    gui.add(controls, 'rotationSpeed', 0, 0.5);
+    // // 回転スピード
+    // gui.add(controls, 'rotationSpeed', 0, 0.5);
 
-    // 跳ね返りスピード
-    gui.add(controls, 'bouncingSpeed', 0, 0.5);
+    // // 跳ね返りスピード
+    // gui.add(controls, 'bouncingSpeed', 0, 0.5);
 
-    // スケーリングスピード
-    gui.add(controls, 'scalingSpeed', 0, 0.5);
+    // // スケーリングスピード
+    // gui.add(controls, 'scalingSpeed', 0, 0.5);
 
-    // showRay
-    gui.add(controls, 'showRay').onChange((e) => {
-        if (tube) scene.remove(tube);
-    });
+    // // showRay
+    // gui.add(controls, 'showRay').onChange((e) => {
+    //     if (tube) scene.remove(tube);
+    // });
 
     // レンダリング処理を実行する
     render();

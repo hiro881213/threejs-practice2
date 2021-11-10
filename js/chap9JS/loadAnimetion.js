@@ -1,5 +1,6 @@
-import { makeBasicAnimation } from './basicAnimation.js'
+import { makeBasicAnimation  } from './basicAnimation.js'
 import { makeSelectingObject } from './selectingObject.js'
+import { makeAnimationTween  } from './animationTween.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -18,5 +19,6 @@ window.onload = function() {
     // セレクトオブジェクトアニメーションを生成する
     makeSelectingObject();
 
-
+    // トゥーンアニメーションを生成する
+    makeAnimationTween();
 };
