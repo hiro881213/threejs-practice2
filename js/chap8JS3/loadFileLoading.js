@@ -3,6 +3,8 @@ import { loadPly } from './loadPly.js'
 import { loadAwd } from './loadAwd.js'
 import { loadAssimp } from './loadAssimp.js'
 import { loadVrml } from './loadVrml.js'
+import { loadBabylon } from './loadbabylon.js'
+
 
 // ------------------------------------------------
 // グローバル変数
@@ -29,5 +31,8 @@ window.onload = function() {
 
     // VRMLアニメーションを生成する
     loadVrml();
+
+    // babylonアニメーションを生成する
+    loadBabylon();
 
 }
