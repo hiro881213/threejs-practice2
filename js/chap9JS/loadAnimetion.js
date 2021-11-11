@@ -1,6 +1,7 @@
 import { makeBasicAnimation  } from './basicAnimation.js'
 import { makeSelectingObject } from './selectingObject.js'
 import { makeAnimationTween  } from './animationTween.js'
+import { makeTrackballControls } from './trackballControls.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -19,6 +20,10 @@ window.onload = function() {
     // セレクトオブジェクトアニメーションを生成する
     makeSelectingObject();
 
-    // トゥーンアニメーションを生成する
-    makeAnimationTween();
+    // // トゥーンアニメーションを生成する
+    // makeAnimationTween();
+
+    // trackballアニメーションを生成する
+    makeTrackballControls();
+
 };
