@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeFirstPersonCamera = () => {
-    
+
     // クロックを生成する
     let clock = new THREE.Clock();
 
