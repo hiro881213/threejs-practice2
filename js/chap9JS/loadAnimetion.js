@@ -30,5 +30,4 @@ window.onload = function() {
     // flyControlsアニメーションを生成する
     makeFlyControls();
 
-
 };
