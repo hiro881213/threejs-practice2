@@ -1,3 +1,5 @@
+import { makeFirstPersonCamera } from './firstPersonCamera.js'
+
 // ------------------------------------------------
 // グローバル変数
 // ------------------------------------------------
@@ -9,5 +11,7 @@ const swiper = new Swiper(".swiper-container");
  */
 window.onload = function() {
     
-    alert();
+    // ファーストパーソンカメラアニメーションを生成する
+    makeFirstPersonCamera();
+
 };
