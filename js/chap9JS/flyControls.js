@@ -5,7 +5,7 @@ let camera;
 let width = window.innerWidth;
 let height = 500;
 
-export const makeTrackballControls = () => {
+export const makeFlyControls = () => {
     
     // クロックを生成する
     let clock = new THREE.Clock();
@@ -16,14 +16,14 @@ export const makeTrackballControls = () => {
     // カメラを生成する
     camera = new THREE.PerspectiveCamera(45, width/height, 0.1, 1000);
 
-    // --------------------------------------------
+    // -----------------------------------------
     // レンダラ生成処理
-    // --------------------------------------------
+    // -----------------------------------------
 
     // レンダラを生成する
     let webGLRenderer = new THREE.WebGLRenderer();
 
-    // 背景色を設定する　
+    // 背景色を設定する
     webGLRenderer.setClearColor(new THREE.Color(0x000));
 
     // サイズを設定する
@@ -32,9 +32,9 @@ export const makeTrackballControls = () => {
     // シャドウマップを有効にする
     webGLRenderer.shadowMap.enabled = true;
 
-    // --------------------------------------------
+    // -----------------------------------------
     // カメラ設定処理
-    // --------------------------------------------
+    // -----------------------------------------
 
     // カメラの位置を設定する
     camera.position.set(100, 100, 300);
@@ -42,121 +42,117 @@ export const makeTrackballControls = () => {
     // カメラの方向を設定する
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
-    // --------------------------------------------
-    // コントローラ生成処理
-    // --------------------------------------------
+    // -----------------------------------------
+    // flyControl生成処理
+    // -----------------------------------------
 
-    // コントローラを生成する
-    let trackballControls = new THREE.TrackballControls(camera);
+    // flyControlを生成する
+    let flyControls = new THREE.FlyControls(camera);
 
-    // 回転スピードを設定する
-    trackballControls.rotateSpeed = 1.0;
+    // 動作スピード
+    flyControls.movementSpeed = 25;
+    flyControls.domElement = document.querySelector("#flyControls-output")
 
-    // zoomスピードを設定する
-    trackballControls.zoomSpeed = 1.0;
+    // rollスピード
+    flyControls.rollSpeed = Math.PI/24;
 
-    // panスピードを設定する
-    trackballControls.panSpeed = 1.0;
+    // autoForward
+    flyControls.autoForward = true;
 
-    // staticmovingを設定する
-    trackballControls.staticMoving = true;
+    // dragToLook
+    flyControls.dragToLook = false;
 
-    // --------------------------------------------
+    // -----------------------------------------
     // 環境光生成処理
-    // --------------------------------------------
+    // -----------------------------------------
 
     // 環境光を生成する
-    let ambientLight = new THREE.AmbientLight(0x383838);
+    const ambientLight = new THREE.AmbientLight(0x383838);
     
-    // シーンに環境光を追加する
+    // シーンに環境光に追加する
     scene.add(ambientLight);
 
-    // --------------------------------------------
+    // -----------------------------------------
     // 点光源生成処理
-    // --------------------------------------------
+    // -----------------------------------------
 
     // 点光源を生成する
     let spotLight = new THREE.SpotLight(0xffffff);
 
     // 点光源の位置を設定する
-    spotLight.position.set(300, 300, 300);
+    spotLight.position.set(100, 140, 130);
 
-    // intensityを設定する
-    spotLight.intensity = 1;
+    // intensity
+    spotLight.intensity = 2;
 
     // シーンに点光源を追加する
     scene.add(spotLight);
 
     // THREEJSオブジェクトをDOMに設定する
-    document.getElementById("trackballControls-output").appendChild(webGLRenderer.domElement);
+    document.getElementById("flyControls-output").appendChild(webGLRenderer.domElement);
 
-    // --------------------------------------------
-    // ローディング生成処理
-    // --------------------------------------------
+    // -----------------------------------------
+    // メッシュ生成処理
+    // -----------------------------------------
 
     // メッシュを生成する
     let mesh;
 
-    // ローダを生成する
+    // ロード処理を実行する
     let load = (object) => {
 
-        // スケールを生成する
+        // スケールを設定する
         let scale = chroma.scale(['red', 'green', 'blue']);
-
-        // カラーを設定する
         setRandomColors(object, scale);
 
-        // シーンにメッシュを追加する
         mesh = object;
+
+        // シーンにメッシュを追加する
         scene.add(mesh);
 
     };
 
-    // --------------------------------------------
+    // -----------------------------------------
     // テクスチャ生成処理
-    // --------------------------------------------
+    // -----------------------------------------
 
-    // テクスチャを生成する
+    // テクスチャローダを生成する
     let textureLoader = new THREE.TextureLoader();
 
     // テクスチャを読み込む
-    let texture = textureLoader.load('../../assets/textures/metro01.JPG');
+    let texture = textureLoader.load('../../assets/textures/Metro01.JPG');
 
-    // --------------------------------------------
-    // モデル生成処理
-    // --------------------------------------------
-
-    // MTLローダを生成する
+    // mtlLoader
     let mtlLoader = new THREE.MTLLoader();
 
     // パスを設定する
     mtlLoader.setPath("../../assets/models/");
 
-    // ファイルを読み込む
-    mtlLoader.load('city.mtl', (material) => {
+    // BaseURL
+    mtlLoader.setBaseUrl("../../assets/models/");
 
-        // マテリアルを読み込む
-        material.preload();
+    // 読み込み処理
+    mtlLoader.load("city.mtl", (materials) => {
 
-        // ローダを生成する
+        materials.preload();
+
         let objLoader = new THREE.OBJLoader();
+
+        // マテリアルを設定する
+        objLoader.setMaterials(materials);
 
         // パスを設定する
         objLoader.setPath("../../assets/models/");
 
-        // ファイルを読み込む
         objLoader.load('city.obj', load);
-    });
-    
-    function setCamControls(){};
 
-    
-    // レンダリング処理を実行する
+    });
+
     render();
 
-    // --------------------------------------------
-    // カラー設定関数
-    // --------------------------------------------
+    // -----------------------------------------
+    // 色設定関数1
+    // -----------------------------------------
 
     function setRandomColors(object, scale) {
 
@@ -167,24 +163,24 @@ export const makeTrackballControls = () => {
             children.forEach((e) => {
 
                 setRandomColors(e, scale);
-                
+
             });
 
         } else {
-                
+
             if (object instanceof THREE.Mesh) {
-                
+
                 _setRandomColors(object.material, scale);
-                
+
             }
-            
+
         }
 
-    };
+    }
 
-    // --------------------------------------------
-    // カラー設定関数2
-    // --------------------------------------------
+    // -----------------------------------------
+    // 色設定関数2
+    // -----------------------------------------
 
     function _setRandomColors(material, scale) {
 
@@ -198,7 +194,7 @@ export const makeTrackballControls = () => {
 
         } else {
 
-            // 色を設定する
+            // マテリアルの色を設定する
             material.color = new THREE.Color(scale(Math.random()).hex());
 
             if (material.name && material.name.indexOf("building") == 0) {
@@ -216,15 +212,19 @@ export const makeTrackballControls = () => {
 
     };
 
-    // --------------------------------------------
+    // -----------------------------------------
     // レンダリング関数
-    // --------------------------------------------
+    // -----------------------------------------
 
     function render() {
 
         let delta = clock.getDelta();
 
-        trackballControls.update(delta);
+        // コントローラを更新する
+        flyControls.update(delta);
+
+        // レンダラをクリアする
+        webGLRenderer.clear();
 
         // アニメーションを生成する
         requestAnimationFrame(render);
