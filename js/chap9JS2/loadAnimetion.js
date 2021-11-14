@@ -1,6 +1,7 @@
 import { makeFirstPersonCamera } from './firstPersonCamera.js'
 import { makeControlsOrbit } from './controlsOrbit.js'
 import { makeMorphTraget } from './morphTartget.js'
+import { makeMorphTragetManually } from './morphTargetManually.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -21,5 +22,9 @@ window.onload = function() {
 
     // MorphTragetアニメーション
     makeMorphTraget();
+
+
+    // MorphTragetManuallyアニメーション
+    makeMorphTragetManually();
 
 };
