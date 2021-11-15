@@ -95,6 +95,15 @@ export const makeMorphTragetManually = () => {
     // シーンに環境光を追加する
     scene.add(ambientLight);
 
+    // --------------------------------------------
+    // 点光源生成処理
+    // --------------------------------------------
+
+    let spotLight = new THREE.SpotLight(0xffffff);
+    spotLight.position.set(-25, 25, 15);
+
+    scene.add(spotLight);
+
     // THREEJSオブジェクトをDOMに追加する
     document.getElementById("morphTargetManually-output").appendChild(renderer.domElement);
 
@@ -118,15 +127,15 @@ export const makeMorphTragetManually = () => {
 
     };
     
-    // --------------------------------------------
-    // GUI生成処理
-    // --------------------------------------------
+    // // --------------------------------------------
+    // // GUI生成処理
+    // // --------------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    gui.add(controls, 'influence1', 0, 1).onChange(controls.update);
-    gui.add(controls, 'influence2', 0, 1).onChange(controls.update);
+    // gui.add(controls, 'influence1', 0, 1).onChange(controls.update);
+    // gui.add(controls, 'influence2', 0, 1).onChange(controls.update);
 
     // レンダリング処理を実行する
     render();
