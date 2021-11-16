@@ -75,19 +75,19 @@ export const makeAnimationBlender = () => {
         this.showHelper = false;
     };
 
-    // ---------------------------------------------
-    // GUI生成処理
-    // ---------------------------------------------
+    // // ---------------------------------------------
+    // // GUI生成処理
+    // // ---------------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // showHelper
-    gui.add(controls, 'showHelper', 0, 0.5).onChange((state) => {
+    // // showHelper
+    // gui.add(controls, 'showHelper', 0, 0.5).onChange((state) => {
 
-        helper.visible = state;
+    //     helper.visible = state;
 
-    });
+    // });
 
     // ---------------------------------------------
     // メッシュ生成処理
