@@ -23,7 +23,7 @@ window.onload = function() {
     // // MD2アニメーションを生成する
     // makeAnimationMd2();
 
-    // gftfアニメーションを生成する
-    makeGltf();
+    // // gftfアニメーションを生成する
+    // makeGltf();
 
 };
