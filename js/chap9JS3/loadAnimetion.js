@@ -1,6 +1,7 @@
 import { makeAnimationBlender } from './animationBlender.js'
 import { makeAnimationCollada } from './animationCollada.js'
 import { makeAnimationMd2     } from './animationMd2.js'
+import { makeGltf } from './animationGltf.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -19,7 +20,10 @@ window.onload = function() {
     // // Colladaアニメーションを生成する
     // makeAnimationCollada();
 
-    // MD2アニメーションを生成する
-    makeAnimationMd2();
+    // // MD2アニメーションを生成する
+    // makeAnimationMd2();
+
+    // gftfアニメーションを生成する
+    makeGltf();
 
 };
