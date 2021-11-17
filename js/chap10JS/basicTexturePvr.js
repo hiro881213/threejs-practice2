@@ -5,17 +5,17 @@ let camera;
 let width = window.innerWidth;
 let height = 500;
 
-export const makeBasicTextureDds = () => {
-
+export const makeBasicTexturePvr = () => {
+    
     // シーンを生成する
     scene = new THREE.Scene();
 
     // カメラを生成する
     camera = new THREE.PerspectiveCamera(45, width/height, 0.1, 1000);
 
-    // ------------------------------------------------
+    // ----------------------------------------------
     // レンダラ生成処理
-    // ------------------------------------------------
+    // ----------------------------------------------
 
     // レンダラを生成する
     let webGLRenderer = new THREE.WebGLRenderer();
@@ -29,22 +29,22 @@ export const makeBasicTextureDds = () => {
     // シャドウマップを設定する
     webGLRenderer.shadowMap.enabled = true;
 
-    // ------------------------------------------------
-    // メッシュ生成処理
-    // ------------------------------------------------
+    // ----------------------------------------------
+    // ポリゴン生成処理
+    // ----------------------------------------------
 
-    // メッシュを生成する
-    let polyhedron = createMesh(new THREE.IcosahedronGeometry(5, 0));
+    // ポリゴンを生成する
+    let polyhedron = createMesh(new THREE.IcosahedronGeometry(5,0));
 
-    // メッシュの位置を設定する
+    // ポリゴンの位置を設定する
     polyhedron.position.x = 12;
 
-    // シーンにメッシュを追加する
+    // シーンにポリゴンを追加する
     scene.add(polyhedron);
 
-    // ------------------------------------------------
-    // 球体メッシュ生成処理
-    // ------------------------------------------------
+    // ----------------------------------------------
+    // 球体生成処理
+    // ----------------------------------------------
 
     // 球体メッシュを生成する
     let sphere = createMesh(new THREE.SphereGeometry(5, 20, 20));
@@ -52,11 +52,11 @@ export const makeBasicTextureDds = () => {
     // シーンに球体メッシュを追加する
     scene.add(sphere);
 
-    // ------------------------------------------------
-    // 立方体メッシュ生成処理
-    // ------------------------------------------------
+    // ----------------------------------------------
+    // 立方体生成処理
+    // ----------------------------------------------
 
-    // 立方体を生成する
+    // 立方体メッシュを生成する
     let cube = createMesh(new THREE.BoxGeometry(5, 5, 5));
 
     // 立方体の位置を設定する
@@ -65,32 +65,32 @@ export const makeBasicTextureDds = () => {
     // シーンに立方体を追加する
     scene.add(cube);
 
-    // ------------------------------------------------
+    // ----------------------------------------------
     // カメラ設定処理
-    // ------------------------------------------------
+    // ----------------------------------------------
 
     // カメラの位置を設定する
     camera.position.set(0, 12, 28);
 
     // カメラの方向を設定する
     camera.lookAt(new THREE.Vector3(0, 0, 0));
-
-    // ------------------------------------------------
+    
+    // ----------------------------------------------
     // 環境光生成処理
-    // ------------------------------------------------
+    // ----------------------------------------------
 
     // 環境光を生成する
-    let ambientLight = new THREE.AmbientLight(0x141414);
+    const ambientLight = new THREE.AmbientLight(0x141414);
 
     // シーンに環境光を追加する
     scene.add(ambientLight);
 
-    // ------------------------------------------------
+    // ----------------------------------------------
     // 直接光生成処理
-    // ------------------------------------------------
+    // ----------------------------------------------
 
     // 直接光を生成する
-    let light = new THREE.DirectionalLight();
+    const light = new THREE.DirectionalLight();
 
     // 直接光の位置を設定する
     light.position.set(0, 30, 20);
@@ -99,53 +99,53 @@ export const makeBasicTextureDds = () => {
     scene.add(light);
 
     // THREEJSオブジェクトをDOMに設定する
-    document.getElementById("basicTextureDds-output").appendChild(webGLRenderer.domElement);
+    document.getElementById("basicTexturePvr-output").appendChild(webGLRenderer.domElement);
 
     let step = 0;
 
     // レンダリング処理を実行する
     render();
 
-    // ------------------------------------------------
+    // ----------------------------------------------
     // メッシュ生成関数
-    // ------------------------------------------------
+    // ----------------------------------------------
 
     function createMesh(geom, imageFile) {
 
-        // ローダーを読み込む
-        let loader = new THREE.DDSLoader();
+        // ローダーを生成する
+        let loader = new THREE.PVRLoader();
 
-        // テクスチャを読み込む
-        let texture = loader.load('../../assets/textures/seafloor.dds');
+        // テクスチャを生成する
+        const texture = loader.load('../../assets/textures/tex_base.pvr');
 
-        // マテリアルを生成する
+        // マテリアルを設定する
         let mat = new THREE.MeshPhongMaterial();
-        
-        // テクスチャをマテリアルに設定する
-        mat.map = texture;
+
+        // マテリアルにテクスチャを設定する
+        mat .map = texture;
 
         // メッシュを生成する
         let mesh = new THREE.Mesh(geom, mat);
 
         return mesh;
-    
+
     }
 
-    // ------------------------------------------------
+    // ----------------------------------------------
     // レンダリング関数
-    // ------------------------------------------------
+    // ----------------------------------------------
 
     function render() {
 
-        // ポリゴンを回転させる
+        // ポリゴンを回転する
         polyhedron.rotation.y = step += 0.01;
         polyhedron.rotation.x = step;
 
-        // 立方体を回転させる
+        // 立方体を回転する
         cube.rotation.y = step;
         cube.rotation.x = step;
 
-        // 球体を回転させる
+        // 球体を回転する
         sphere.rotation.y = step;
         sphere.rotation.x = step;
 
