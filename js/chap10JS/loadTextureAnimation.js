@@ -1,6 +1,7 @@
 import { makeBasicTextureDds } from './basicTextureDds.js'
 import { makeBasicTexturePvr } from './basicTexturePvr.js'
 import { makeBasicTextureTga } from './basicTextureTga.js'
+import { makeBasicTexture    } from './basicTexture.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -19,7 +20,10 @@ window.onload = function() {
     // PVRテクスチャアニメーションを生成する
     makeBasicTexturePvr();
 
-    // TGAテクスチャアニメーションを生成する
-    makeBasicTextureTga()
+    // // TGAテクスチャアニメーションを生成する
+    // makeBasicTextureTga()
+
+    // ベーシックテクスチャアニメーション
+    makeBasicTexture();
 
 };
