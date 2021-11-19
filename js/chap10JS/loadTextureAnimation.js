@@ -27,7 +27,7 @@ window.onload = function() {
     // // ベーシックテクスチャアニメーションを生成する
     // makeBasicTexture();
 
-    // BUMPマップアニメーションを生成する
-    makeBumpMap();
+    // // BUMPマップアニメーションを生成する
+    // makeBumpMap();
 
 };
