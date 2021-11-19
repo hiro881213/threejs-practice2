@@ -2,6 +2,7 @@ import { makeBasicTextureDds } from './basicTextureDds.js'
 import { makeBasicTexturePvr } from './basicTexturePvr.js'
 import { makeBasicTextureTga } from './basicTextureTga.js'
 import { makeBasicTexture    } from './basicTexture.js'
+import { makeBumpMap         } from './bumpMap.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -23,7 +24,10 @@ window.onload = function() {
     // // TGAテクスチャアニメーションを生成する
     // makeBasicTextureTga()
 
-    // ベーシックテクスチャアニメーション
-    makeBasicTexture();
+    // // ベーシックテクスチャアニメーションを生成する
+    // makeBasicTexture();
+
+    // BUMPマップアニメーションを生成する
+    makeBumpMap();
 
 };
