@@ -27,7 +27,7 @@ window.onload = function() {
     // // 静的環境マップアニメーションを生成する
     // makeEnvMapStatic();
 
-    // specularマップアニメーション
-    makeSpecularMap();
+    // // specularマップアニメーション
+    // makeSpecularMap();
 
 }
