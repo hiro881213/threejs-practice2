@@ -1,4 +1,6 @@
 import { makeNormalMap } from './normalMap.js'
+import { makeLightMap  } from './lightMap.js'
+
 
 // ------------------------------------------------
 // グローバル変数
@@ -11,6 +13,10 @@ const swiper = new Swiper(".swiper-container");
  */
 window.onload = function() {
     
-    // ノーマルマップアニメーションを生成する
-    makeNormalMap();
+    // // ノーマルマップアニメーションを生成する
+    // makeNormalMap();
+    
+    // ライトマップアニメーションを生成する
+    makeLightMap();
+
 }
