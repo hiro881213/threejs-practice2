@@ -1,6 +1,6 @@
-import { makeNormalMap } from './normalMap.js'
-import { makeLightMap  } from './lightMap.js'
-
+import { makeNormalMap     } from './normalMap.js'
+import { makeLightMap      } from './lightMap.js'
+import { makeEnvMapDynamic } from './envMapDynamic.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -16,7 +16,10 @@ window.onload = function() {
     // // ノーマルマップアニメーションを生成する
     // makeNormalMap();
     
-    // ライトマップアニメーションを生成する
-    makeLightMap();
+    // // ライトマップアニメーションを生成する
+    // makeLightMap();
+
+    // 動的環境マップアニメーションを生成する
+    makeEnvMapDynamic();
 
 }

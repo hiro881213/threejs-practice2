@@ -14,6 +14,7 @@
 
     <!-- three.js設定用GUIライブラリ -->
     <script type="text/javascript" src = "../lib/dat.gui.js"></script>
+    <script type="text/javascript" src = "../lib/controls/OrbitControls.js"></script>
 
     <link   rel = 'stylesheet' href = '../css/index.css'>
     <script type = 'module' src = "../js/chap10JS2/loadMapAnimation.js"></script>
@@ -23,11 +24,14 @@
     <main>
         <div class="swiper-container" style = 'text-align:center;'>
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <!-- <div class="swiper-slide">
                     <div id = 'normalMap-output'></div>
                 </div>
                 <div class="swiper-slide">
                     <div id = 'lightMap-output'></div>
+                </div> -->
+                <div class="swiper-slide">
+                    <div id = 'envMapDynamic-output'></div>
                 </div>
 
             </div>
