@@ -160,11 +160,11 @@ export const makeEnvMapDynamic = () => {
 
     function addControls(controlObject) {
 
-        // GUIを生成する
-        let gui = new dat.GUI();
+        // // GUIを生成する
+        // let gui = new dat.GUI();
 
-        // rotationSpeed
-        gui.add(controlObject, 'rotationSpeed', -0.1, 0.1);
+        // // rotationSpeed
+        // gui.add(controlObject, 'rotationSpeed', -0.1, 0.1);
 
     }
 
