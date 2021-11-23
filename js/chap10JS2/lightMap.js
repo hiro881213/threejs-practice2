@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeLightMap = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 

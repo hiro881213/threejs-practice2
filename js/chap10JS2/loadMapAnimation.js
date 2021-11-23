@@ -2,6 +2,7 @@ import { makeNormalMap     } from './normalMap.js'
 import { makeLightMap      } from './lightMap.js'
 import { makeEnvMapDynamic } from './envMapDynamic.js'
 import { makeEnvMapStatic  } from './envMapStatic.js'
+import { makeSpecularMap   } from './specularMap.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -23,7 +24,10 @@ window.onload = function() {
     // 動的環境マップアニメーションを生成する
     makeEnvMapDynamic();
 
-    // 静的環境マップアニメーションを生成する
-    makeEnvMapStatic();
+    // // 静的環境マップアニメーションを生成する
+    // makeEnvMapStatic();
+
+    // specularマップアニメーション
+    makeSpecularMap();
 
 }
