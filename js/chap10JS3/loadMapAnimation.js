@@ -1,5 +1,6 @@
 import { makeUvMappingManual } from './uvMappingManual.js'
 import { makeUvMapping       } from './uvMapping.js'
+import { makeRepeatWrapping  } from './repeatWrapping.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -15,7 +16,10 @@ window.onload = function() {
     // // UVマッピングマニュアルアニメーションを生成する
     // makeUvMappingManual();
 
-    // UVマッピングアニメーションを生成する
-    makeUvMapping();
+    // // UVマッピングアニメーションを生成する
+    // makeUvMapping();
+
+    // 繰り返しラッピングアニメーション
+    makeRepeatWrapping();
 
 }
