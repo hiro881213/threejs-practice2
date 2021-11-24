@@ -1,4 +1,5 @@
 import { makeUvMappingManual } from './uvMappingManual.js'
+import { makeUvMapping       } from './uvMapping.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -11,7 +12,10 @@ const swiper = new Swiper(".swiper-container");
  */
 window.onload = function() {
     
-    // UVマッピングマニュアルアニメーションを生成する
-    makeUvMappingManual();
+    // // UVマッピングマニュアルアニメーションを生成する
+    // makeUvMappingManual();
+
+    // UVマッピングアニメーションを生成する
+    makeUvMapping();
 
 }
