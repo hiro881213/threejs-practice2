@@ -23,7 +23,7 @@ window.onload = function() {
     // // 繰り返しラッピングアニメーション
     // makeRepeatWrapping();
 
-    // キャンバステクスチャアニメーション
-    makeCanvasTexture();
+    // // キャンバステクスチャアニメーション
+    // makeCanvasTexture();
 
 }
