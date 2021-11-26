@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeCanvasTexture = () => {
-    
+
     // canvasタグを生成する
     let canvas = document.createElement("canvas");
 
