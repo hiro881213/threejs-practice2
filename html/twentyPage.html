@@ -8,7 +8,10 @@
 
     <!-- カルーセル用ライブラリ -->
     <script type="text/javascript" src="https://unpkg.com/tiny-swiper@latest/lib/index.min.js"></script>
-
+    
+    <!-- jQuery -->
+    <script type = "type/javascript" src = "../lib/literally/jquery-1.8.2.js" ></script>
+    
     <!-- Three.js用ライブラリ -->
     <script type = "text/javascript" src = "../lib/three.js"></script>
 
@@ -22,19 +25,27 @@
 <body>
     <header></header>
     <main>
-        <div id = 'canvas-output' style = "float: left"></div>
+        <!-- <div id = 'canvas-output' style = "float: left"></div> -->
         
+        <video id = "video" style = "display:none; position: absolute; left: 15px; top:75px;"
+                src = "../assets/movies/Big_Buck_Bunny_small.ogv" controls = "true" autoplay = "true"></video>
+
         <div class="swiper-container" style = 'text-align:center;'>
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <!-- <div class="swiper-slide">
                     <div id = 'canvasTexture-output'></div>
+                </div> -->
+
+                <div class="swiper-slide">
+                    <div id = 'videoTextureAlter-output'></div>
                 </div>
+
             </div>
         </div>
-        <div class="fs-container">
+        <!-- <div class="fs-container">
             <div id="canvas-output" style="float:left">
             </div>
-        </div>
+        </div> -->
     </main>
     <footer>
         <a href = './nineteenPage.html'>前のステージへ</a>

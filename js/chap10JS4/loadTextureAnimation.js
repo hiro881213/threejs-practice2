@@ -1,5 +1,5 @@
-import { canvasTextureBumpMap } from './canvasTextureBumpMap.js'
-
+import { canvasTextureBumpMap  } from './canvasTextureBumpMap.js'
+import { makeVideoTextureAlter } from './videoTextureAlter.js'
 // ------------------------------------------------
 // グローバル変数
 // ------------------------------------------------
@@ -11,7 +11,8 @@ const swiper = new Swiper(".swiper-container");
  */
 window.onload = function() {
 
-    // CanvasBumpマップアニメーション
-    canvasTextureBumpMap();
+    // // CanvasBumpマップアニメーション
+    // canvasTextureBumpMap();
 
+    makeVideoTextureAlter();
 }
