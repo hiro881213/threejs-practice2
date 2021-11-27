@@ -1,5 +1,7 @@
 import { canvasTextureBumpMap  } from './canvasTextureBumpMap.js'
 import { makeVideoTextureAlter } from './videoTextureAlter.js'
+import { makeVideoTexture      } from './videoTexture.js'
+
 // ------------------------------------------------
 // グローバル変数
 // ------------------------------------------------
@@ -15,4 +17,6 @@ window.onload = function() {
     // canvasTextureBumpMap();
 
     makeVideoTextureAlter();
+    makeVideoTexture();
+
 }
