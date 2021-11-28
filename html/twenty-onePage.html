@@ -14,16 +14,22 @@
     <script type="text/javascript" src = "../lib/dat.gui.js"></script>
 
     <script type = "text/javascript" src = "../lib/controls/OrbitControls.js"></script>
-    
+
+    <script type = "text/javascript" src = "../lib/postprocessing/EffectComposer.js"></script>
     <script type = "text/javascript" src = "../lib/postprocessing/ShaderPass.js"></script>
     <script type = "text/javascript" src = "../lib/shaders/CopyShader.js"></script>
 
-    <script type = "text/javascript" src = "../lib/postprocessing/EffectComposer.js"></script>
+    <script type = "text/javascript" src = "../lib/postprocessing/BloomPass.js"></script>
+    <script type = "text/javascript" src = "../lib/shaders/ConvolutionShader.js"></script>
+
+    <script type = "text/javascript" src = "../lib/postprocessing/DotScreenPass.js"></script>
+    <script type = "text/javascript" src = "../lib/shaders/DotScreenShader.js"></script>
 
     <script type = "text/javascript" src = "../lib/postprocessing/MaskPass.js"></script>
     <script type = "text/javascript" src = "../lib/postprocessing/FilmPass.js"></script>
     <script type = "text/javascript" src = "../lib/shaders/FilmShader.js"></script>
     <script type = "text/javascript" src = "../lib/postprocessing/RenderPass.js"></script>
+    <script type = "text/javascript" src = "../lib/postprocessing/TexturePass.js"></script>
 
     <link   rel = 'stylesheet' href = '../css/index.css'>
     <script type = 'module' src = "../js/chap11JS/loadEffectAnimation.js"></script>
@@ -33,8 +39,11 @@
     <main>
         <div class="swiper-container" style = 'text-align:center;'>
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <!-- <div class="swiper-slide">
                     <div id = 'basicEffectComposer-output'></div>
+                </div> -->
+                <div class="swiper-slide">
+                    <div id = 'postProcessingSimple-output'></div>
                 </div>
             </div>
         </div>
