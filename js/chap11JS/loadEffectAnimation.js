@@ -1,5 +1,6 @@
 import { makeBasicEffectComposer  } from './basicEffectComposer.js'
 import { makePostProcessingSimple } from './postProcessingSimple.js'
+import { makeGlitchPass           } from './glitchPass.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -13,7 +14,7 @@ const swiper = new Swiper(".swiper-container");
 window.onload = function() {
 
     // makeBasicEffectComposer();
-
-    makePostProcessingSimple();
+    // makePostProcessingSimple();
+    makeGlitchPass();
 
 };
