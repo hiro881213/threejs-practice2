@@ -17,6 +17,6 @@ window.onload = function() {
     // makeBasicEffectComposer();
     // makePostProcessingSimple();
     makeGlitchPass();
-    makePostProcessingMasks();
+    // makePostProcessingMasks();
 
 };
