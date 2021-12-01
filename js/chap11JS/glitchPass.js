@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeGlitchPass = () => {
-    
+
     // シーンを生成する
     scene = new THREE.Scene();
 
@@ -131,11 +131,11 @@ export const makeGlitchPass = () => {
     // GUI生成処理
     // ------------------------------------
 
-    // GUIを生成する
-    let gui = new dat.GUI();
+    // // GUIを生成する
+    // let gui = new dat.GUI();
 
-    // goWild
-    gui.add(controls, "goWild").onChange(controls.updateEffect);
+    // // goWild
+    // gui.add(controls, "goWild").onChange(controls.updateEffect);
 
     let step = 0;
 

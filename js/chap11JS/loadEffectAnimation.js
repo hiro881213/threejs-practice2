@@ -1,6 +1,7 @@
 import { makeBasicEffectComposer  } from './basicEffectComposer.js'
 import { makePostProcessingSimple } from './postProcessingSimple.js'
 import { makeGlitchPass           } from './glitchPass.js'
+import { makePostProcessingMasks  } from './postProcessingMasks.js'
 
 // ------------------------------------------------
 // グローバル変数
@@ -16,5 +17,6 @@ window.onload = function() {
     // makeBasicEffectComposer();
     // makePostProcessingSimple();
     makeGlitchPass();
+    makePostProcessingMasks();
 
 };

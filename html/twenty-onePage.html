@@ -18,6 +18,7 @@
     <script type = "text/javascript" src = "../lib/postprocessing/EffectComposer.js"></script>
     <script type = "text/javascript" src = "../lib/postprocessing/ShaderPass.js"></script>
     <script type = "text/javascript" src = "../lib/shaders/CopyShader.js"></script>
+    <script type = "text/javascript" src = "../lib/shaders/ColorifyShader.js"></script>
 
     <script type = "text/javascript" src = "../lib/postprocessing/EffectComposer.js"></script>
 
@@ -30,7 +31,9 @@
     <script type = "text/javascript" src = "../lib/postprocessing/MaskPass.js"></script>
     <script type = "text/javascript" src = "../lib/postprocessing/FilmPass.js"></script>
     <script type = "text/javascript" src = "../lib/shaders/FilmShader.js"></script>
+    <script type = "text/javascript" src = "../lib/shaders/SepiaShader.js"></script>
     <script type = "text/javascript" src = "../lib/postprocessing/RenderPass.js"></script>
+    <script type = "text/javascript" src = "../lib/postprocessing/SavePass.js"></script>
     <script type = "text/javascript" src = "../lib/postprocessing/TexturePass.js"></script>
     <script type = "text/javascript" src = "../lib/postprocessing/GlitchPass.js"></script>
     <script type = "text/javascript" src = "../lib/shaders/DigitalGlitch.js"></script>
@@ -54,6 +57,11 @@
                 <div class="swiper-slide">
                     <div id = 'glichPass-output'></div>
                 </div>
+
+                <div class="swiper-slide">
+                    <div id = 'postProcessingMasks-output'></div>
+                </div>
+
 
             </div>
         </div>
