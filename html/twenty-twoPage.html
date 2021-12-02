@@ -12,6 +12,28 @@
     <!-- Three.js用ライブラリ -->
     <script type = "text/javascript" src = "../lib/three.js"></script>
     <script type="text/javascript" src = "../lib/dat.gui.js"></script>
+    <script type="text/javascript" src = "../lib/loaders/OBJLoader.js"></script>
+    <script type="text/javascript" src = "../lib/loaders/MTLLoader.js"></script>
+
+    <script type="text/javascript" src = "../lib/postprocessing/EffectComposer.js"></script>
+    <script type="text/javascript" src = "../lib/postprocessing/ShaderPass.js"></script>
+    <script type="text/javascript" src = "../lib/postprocessing/RenderPass.js"></script>
+    <script type="text/javascript" src = "../lib/postprocessing/MaskPass.js"></script>
+
+    <script type="text/javascript" src = "../lib/shaders/CopyShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/BrightnessContrastShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/ColorifyShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/SepiaShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/RGBShiftShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/ColorCorrectionShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/MirrorShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/VignetteShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/HueSaturationShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/BlendShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/KaleidoShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/LuminosityShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/TechnicolorShader.js"></script>
+    <script type="text/javascript" src = "../lib/shaders/UnpackDepthRGBAShader.js"></script>
 
     <link   rel = 'stylesheet' href = '../css/index.css'>
     <script type = 'module' src = "../js/chap11JS2/loadPassAnimation.js"></script>
@@ -22,7 +44,7 @@
         <div class="swiper-container" style = 'text-align:center;'>
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div id = 'glichPass-output'></div>
+                    <div id = 'simpleShadePass-output'></div>
                 </div>
             </div>
         </div>

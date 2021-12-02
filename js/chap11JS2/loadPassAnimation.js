@@ -1,3 +1,5 @@
+import { makeSimpleShaderPass } from './simpleShaderPass.js'
+
 // ------------------------------------------------
 // グローバル変数
 // ------------------------------------------------
@@ -9,6 +11,7 @@ const swiper = new Swiper(".swiper-container");
  */
 window.onload = function() {
 
-    alert();
+    // シェーダーパスアニメーション生成処理
+    makeSimpleShaderPass();
 
 };
