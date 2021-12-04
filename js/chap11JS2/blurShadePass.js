@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeBlurShaderPass = () => {
-    
+
     // クロマのスケールを設定する
     let scale = chroma.scale(['white', 'blue']);
 

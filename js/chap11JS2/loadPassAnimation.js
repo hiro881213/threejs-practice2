@@ -1,5 +1,6 @@
 import { makeSimpleShaderPass } from './simpleShaderPass.js'
 import { makeBlurShaderPass   } from './blurShadePass.js'
+import { makeAdvancedShaderPass } from './advancedShaderPass.js';
 // ------------------------------------------------
 // グローバル変数
 // ------------------------------------------------
@@ -14,7 +15,10 @@ window.onload = function() {
     // // シェーダーパスアニメーション生成処理
     // makeSimpleShaderPass();
 
-    // ブラーシェーダーパスアニメーション生成
-    makeBlurShaderPass();
+    // // ブラーシェーダーパスアニメーション生成
+    // makeBlurShaderPass();
 
+    // アドバンスシェーダーアニメーション
+    makeAdvancedShaderPass();
+    
 };
