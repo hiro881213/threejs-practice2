@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeAdvancedShaderPass = () => {
-    
+
     // スケールを生成する
     const scale = chroma.scale(['white', 'blue']);
 
