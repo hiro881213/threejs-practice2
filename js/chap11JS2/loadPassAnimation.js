@@ -1,5 +1,5 @@
 import { makeSimpleShaderPass } from './simpleShaderPass.js'
-
+import { makeBlurShaderPass   } from './blurShadePass.js'
 // ------------------------------------------------
 // グローバル変数
 // ------------------------------------------------
@@ -11,7 +11,10 @@ const swiper = new Swiper(".swiper-container");
  */
 window.onload = function() {
 
-    // シェーダーパスアニメーション生成処理
-    makeSimpleShaderPass();
+    // // シェーダーパスアニメーション生成処理
+    // makeSimpleShaderPass();
+
+    // ブラーシェーダーパスアニメーション生成
+    makeBlurShaderPass();
 
 };
