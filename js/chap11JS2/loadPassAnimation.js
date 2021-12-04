@@ -23,7 +23,7 @@ window.onload = function() {
     // // アドバンスシェーダーアニメーション
     // makeAdvancedShaderPass();
 
-    // カスタムシェーダーアニメーション生成
-    makeCustomShaderPass();
+    // // カスタムシェーダーアニメーション生成
+    // makeCustomShaderPass();
 
 };
