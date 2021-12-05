@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeBasicScene = () => {
-    
+
     'use strict';
 
     // スケールを生成する
@@ -20,7 +20,7 @@ export const makeBasicScene = () => {
     let renderer;
     let render_stats;
     let light;
-    
+
     // シーン初期化処理
     initScene = () => {
 
@@ -169,19 +169,17 @@ export const makeBasicScene = () => {
         // GUI生成処理
         // -----------------------------------------
 
-        // GUIを生成する
-        const gui = new dat.GUI();
+        // // GUIを生成する
+        // const gui = new dat.GUI();
 
-        gui.add(controls, 'gravityX', -100, 100);
-        gui.add(controls, 'gravityY', -100, 100);
-        gui.add(controls, 'gravityZ', -100, 100);
-        gui.add(controls, 'resetScene');
+        // gui.add(controls, 'gravityX', -100, 100);
+        // gui.add(controls, 'gravityY', -100, 100);
+        // gui.add(controls, 'gravityZ', -100, 100);
+        // gui.add(controls, 'resetScene');
 
         controls.resetScene();
 
     };
-
-    let stepX;
 
     // -----------------------------------------
     // レンダリング関数
