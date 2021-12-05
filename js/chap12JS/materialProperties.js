@@ -6,7 +6,7 @@ let width = window.innerWidth;
 let height = 500;
 
 export const makeMaterialProperties = () => {
-    
+
     'use strict';
 
     Physijs.scripts.worker = '../../lib/physijs_worker.js';
